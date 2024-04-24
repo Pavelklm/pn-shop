@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <EarthoOneProvider
-        domain={'http://localhost:3000/'}
+        domain={'https://pn-shop-er19ejh29-pavelklms-projects.vercel.app/'}
         clientId={`${process.env.NEXT_PUBLIC_OAUTH_CLIENT_ID}`}
       >
         <body className={`${isAuthPopup ? 'overflow-hidden' : ''}`}>
