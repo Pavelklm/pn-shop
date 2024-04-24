@@ -5,7 +5,7 @@ const Logo = () => (
   <Link className='logo' href={'/'}>
     <Image
       className='logo__img'
-      src='/img/LogoKlm.svg'
+      src='img/LogoKlm.svg'
       alt='logo-KLM'
       width={60}
       height={32}
