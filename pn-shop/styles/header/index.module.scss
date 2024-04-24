@@ -1,0 +1,65 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 27px;
+    min-width: 400px;
+  }
+
+  &__links__item {
+    text-decoration: none;
+
+    &__text {
+      transition: all 0.3s ease-in-out;
+      font-weight: 400;
+      font-size: 16px;
+
+
+      &:hover {
+        color: var(--main-color);
+      }
+
+
+    }
+
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+  }
+
+  &__buttons__item {
+    display: flex;
+    align-items: center;
+    fill: #fff;
+    width: 32px;
+    height: 32px;
+
+    :hover {
+      transition: fill 0.3s ease;
+      fill: var(--main-color);
+    }
+
+  }
+}
