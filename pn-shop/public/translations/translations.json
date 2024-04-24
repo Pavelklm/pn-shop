@@ -1,0 +1,88 @@
+{
+  "ru": {
+    "header":{
+      "Home": "Главная",
+      "Shop": "Магазин",
+      "Pages": "Страницы",
+      "Blog": "Блог",
+      "About": "О нас",
+      "logout": "Выход",
+      "profile": "Профиль"
+    },
+    "errors" : {
+      "userAlreadyExists": "Пользователь с таким Email уже существует",
+       "userNotFound": "Пользователь не найден",
+       "wrongPassword": "Неверный логин или пароль"
+      },
+    "auth_popup": {
+      "registration_title": "Регистрация",
+      "registration_text": "Создать",
+      "registration_description": "Создать аккаунт",
+      "registration_question": "Уже есть аккаунт?",
+      "login_text": "Войти",
+      "login_description": "Войти в свой аккаунт",
+      "forgot_password": "Забыли пароль?",
+      "login_question": "Еще нет аккаунта?",
+      "register": "Зарегистрироваться!",
+      "name": "Имя",
+      "password": "Пароль"
+    },
+    "validation": {
+      "invalid_value": "Недопустимое значение!",
+      "requiredName": "Введите имя!",
+      "invalid_phone": "Нправильный телефон!",
+      "required_email": "Введите email!",
+      "invalid_email": "Неправильный Email!",
+      "min_2": "Минимум 2 символа!",
+      "max_15": "Не более 15 символов!",
+      "required_password": "Введите пароль!",
+      "min_4": "Минимум 4 символа!",
+      "max_20": "Не более 20 символов!"
+    }
+  },
+  "en": {
+    "header":{
+      "Home": "Home",
+      "Shop": "Shop",
+      "Pages": "Pages",
+      "Blog": "Blog",
+      "About": "About",
+      "logout": "Logout",
+      "profile": "Profile"
+    },
+    "errors": {
+       "userAlreadyExists": "User with this Email already exists",
+        "userNotFound": "User not found",
+        "wrongPassword": "Wrong login or password"
+      },
+    "auth_popup": {
+      "registration_title": "Registration",
+      "registration_text": "Create",
+      "registration_description": "Create an account",
+      "registration_question": "Already have an account?",
+      "login_text": "Login",
+      "login_description": "Login to your account",
+      "forgot_password": "Forgot your password?",
+      "login_question": "Don't have an account yet?",
+      "register": "Register!",
+      "name": "Name",
+      "password": "Password"
+    },
+    "validation": {
+      "invalid_value": "Invalid value!", 
+      "requiredName": "Enter name!",
+      "invalid_phone": "Invalid phone!",
+      "required_email": "Enter email!",
+      "invalid_email": "Invalid email!",
+      "min_2": "Minimum 2 characters!",
+      "max_15": "Maximum 15 characters!",
+      "required_password": "Enter password!",
+      "min_4": "Minimum 4 characters!",
+      "max_20": "Maximum 20 characters!"
+    }
+  }
+  
+  }
+
+
+
