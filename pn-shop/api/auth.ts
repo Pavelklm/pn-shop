@@ -37,6 +37,7 @@ export const singUpFx = createAsyncThunk(
         password,
       })
       if (data.warningMessage) {
+        console.log(data)
         return Promise.reject(data.warningMessage)
       }
       onAuthSuccess('Registration successful', data, dispatch)
