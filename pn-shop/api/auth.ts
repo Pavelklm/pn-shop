@@ -17,7 +17,9 @@ export const singUpFx = createAsyncThunk(
     dispatch: AppDispatch
   }) => {
     try {
+      console.log('signup')
       if (isOAuth) {
+        console.log('oauth sign start')
         const { data } = await api.post('/api/users/oauth', {
           name,
           email,
@@ -25,6 +27,7 @@ export const singUpFx = createAsyncThunk(
         })
         const userData = data.user ? data.user : data
         onAuthSuccess('Authorization successful', userData, dispatch)
+        console.log('oauth sign end')
         return userData
       }
       const { data } = await api.post('/api/users/signup', {
@@ -52,13 +55,16 @@ export const singInFx = createAsyncThunk(
     isOAuth,
   }: ISignUpFx & { dispatch: AppDispatch }) => {
     try {
+      console.log('signin')
       if (isOAuth) {
+        console.log('oauth sign start')
         const { data } = await api.post('/api/users/oauth', {
           email,
           password,
         })
         const userData = data.user ? data.user : data
         onAuthSuccess('Authorization successful', userData, dispatch)
+        console.log('oauth sign end')
         return userData
       }
 
