@@ -3,7 +3,7 @@
     "header":{
       "Home": "Главная",
       "Shop": "Магазин",
-      "Pages": "Страницы",
+      "Contacts": "Контакты",
       "Blog": "Блог",
       "About": "О нас",
       "logout": "Выход",
@@ -44,7 +44,7 @@
     "header":{
       "Home": "Home",
       "Shop": "Shop",
-      "Pages": "Pages",
+      "Contacts": "Contacts",
       "Blog": "Blog",
       "About": "About",
       "logout": "Logout",

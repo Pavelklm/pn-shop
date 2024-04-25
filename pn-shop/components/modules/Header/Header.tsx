@@ -65,11 +65,6 @@ export const Header = () => {
               </Link>
             </li>
             <li className={styles.header__links__item}>
-              <Link className={`link-reset ${styles.header__links__item__text}`} href='/Pages'>
-                {translations[lang].header.Pages}
-              </Link>
-            </li>
-            <li className={styles.header__links__item}>
               <Link className={`link-reset ${styles.header__links__item__text}`} href={'/Blog'}>
                 {translations[lang].header.Blog}
               </Link>
@@ -77,6 +72,11 @@ export const Header = () => {
             <li className={styles.header__links__item}>
               <Link className={`link-reset ${styles.header__links__item__text}`} href={'/About'}>
                 {translations[lang].header.About}
+              </Link>
+            </li>
+            <li className={styles.header__links__item}>
+              <Link className={`link-reset ${styles.header__links__item__text}`} href='/Contacts'>
+                {translations[lang].header.Contacts}
               </Link>
             </li>
           </ul>
