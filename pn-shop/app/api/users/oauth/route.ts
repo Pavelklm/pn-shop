@@ -8,6 +8,7 @@ import {
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
+  console.log('oauth start')
   const { db, reqBody } = await getDbAndReqBody(clientPromise, req)
   const user = await findUserByEmail(db, reqBody.email)
 
@@ -17,6 +18,6 @@ export async function POST(req: Request) {
   }
 
   const tokens = generateTokens(user.name, reqBody.email)
-
+  console.log('oauth end')
   return NextResponse.json(tokens)
 }
