@@ -25,6 +25,7 @@ export const singUpFx = createAsyncThunk(
           email,
           password,
         })
+        console.log(data)
         const userData = data.user ? data.user : data
         onAuthSuccess('Authorization successful', userData, dispatch)
         console.log('oauth sign end')
