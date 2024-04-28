@@ -56,6 +56,11 @@
     width: 32px;
     height: 32px;
 
+
+    &__svg {
+      fill: transparent;
+    }
+
     :hover {
       transition: fill 0.3s ease;
       fill: var(--main-color);

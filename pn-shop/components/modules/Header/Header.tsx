@@ -98,23 +98,23 @@ export const Header = () => {
             <ul className={`list-reset ${styles.header__buttons}`}>
               <li className={styles.header__buttons__item}>
                 <button className={`btn-reset align-items-center ${styles.header__buttons__item__search}`}>
-                  <HeaderSvgSearch className={styles.header__buttons__item__search__svg} />
+                  <HeaderSvgSearch className={styles.header__buttons__item__svg} />
                 </button>
               </li>
               <li className={styles.header__buttons__item}>
                 <Link
                   className={styles.header__buttons__item__wish_list}
-                  href={'/wish-list'}
+                  href={'/Wish_List'}
                 >
-                  <HeaderSvgWishList className={` align-items-center ${styles.header__buttons__item__wish_list__svg}`} />
+                  <HeaderSvgWishList className={` align-items-center ${styles.header__buttons__item__svg}`} />
                 </Link>
               </li>
               <li className={styles.header__buttons__item}>
                 <Link
                   className={styles.header__buttons__item__shopping_cart}
-                  href={'/shopping-cart'}
+                  href={'/Shopping_Cart'}
                 >
-                  <HeaderSvgShopingCart className={` align-items-center ${styles.header__buttons__item__shopping_cart__svg}`} />
+                  <HeaderSvgShopingCart className={` align-items-center ${styles.header__buttons__item__svg}`} />
                 </Link>
               </li>
               <li className={styles.header__buttons__item}>
@@ -129,7 +129,7 @@ export const Header = () => {
                         className={`btn-reset align-items-center ${styles.header__buttons__item__login}`}
                         onClick={handleOpenAuthPopup}
                       >
-                        <HeaderSvgLogin className={styles.header__buttons__item__login__svg} />
+                        <HeaderSvgLogin className={styles.header__buttons__item__svg} />
                       </button>
                     )
                 )}
