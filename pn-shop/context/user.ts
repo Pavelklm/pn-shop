@@ -10,6 +10,7 @@ const userSlice = createSlice({
       email: '',
       image: '',
       _id: '',
+      role: '',
     },
     isLoadingUser: false,
   },
@@ -21,9 +22,11 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loginCheckFx.fulfilled, (state, { payload }) => {
-        state.user.name = payload.name
-        state.user.email = payload.email
-        state.user._id = payload._id
+        state.user.name = payload?.name
+        state.user.email = payload?.email
+        state.user._id = payload?._id
+        state.user.image = payload?.image
+        state.user.role = payload?.role
         state.isLoadingUser = false
       })
       .addCase(loginCheckFx.pending, (state) => {
