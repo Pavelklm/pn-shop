@@ -1,6 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { setIsAuth } from '@/context/auth'
 import { AppDispatch } from '@/context/store'
 import { onAuthSuccess } from '@/lib/utils/auth'
+import { handleJWTError } from '@/lib/utils/errors'
 import { ISignUpFx } from '@/types/IAuthPopup'
+import { Tokens } from '@/types/ITokens'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import toast from 'react-hot-toast'
 import api from './apiInstance'
@@ -17,18 +21,14 @@ export const singUpFx = createAsyncThunk(
     dispatch: AppDispatch
   }) => {
     try {
-      console.log('signup')
       if (isOAuth) {
-        console.log('oauth sign start')
         const { data } = await api.post('/api/users/oauth', {
           name,
           email,
           password,
         })
-        console.log(data)
         const userData = data.user ? data.user : data
         onAuthSuccess('Authorization successful', userData, dispatch)
-        console.log('oauth sign end')
         return userData
       }
       const { data } = await api.post('/api/users/signup', {
@@ -37,7 +37,6 @@ export const singUpFx = createAsyncThunk(
         password,
       })
       if (data.warningMessage) {
-        console.log(data)
         return Promise.reject(data.warningMessage)
       }
       onAuthSuccess('Registration successful', data, dispatch)
@@ -57,16 +56,13 @@ export const singInFx = createAsyncThunk(
     isOAuth,
   }: ISignUpFx & { dispatch: AppDispatch }) => {
     try {
-      console.log('signin')
       if (isOAuth) {
-        console.log('oauth sign start')
         const { data } = await api.post('/api/users/oauth', {
           email,
           password,
         })
         const userData = data.user ? data.user : data
         onAuthSuccess('Authorization successful', userData, dispatch)
-        console.log('oauth sign end')
         return userData
       }
 
@@ -82,5 +78,39 @@ export const singInFx = createAsyncThunk(
     } catch (error) {
       toast.error((error as Error).message)
     }
+  }
+)
+
+export const loginCheckFx = createAsyncThunk(
+  'auth/loginCheck',
+  async ({ jwt }: { jwt: string }, thunkAPI: any) => {
+    const { dispatch } = thunkAPI
+    try {
+      const { data } = await api.get('/api/users/login-check', {
+        headers: { Authorization: `Bearer ${jwt}` },
+      })
+      if (data?.error) {
+        handleJWTError(data.error.name, dispatch, {
+          repeatRequestMethodName: 'loginCheckFx',
+        })
+        return
+      }
+
+      dispatch(setIsAuth(true))
+      return data.user
+    } catch (error) {
+      toast.error((error as Error).message)
+    }
+  }
+)
+
+export const refreshTokenFx = createAsyncThunk<Tokens, { jwt: string }>(
+  'auth/refreshToken',
+  async ({ jwt }) => {
+    const { data } = await api.post('/api/users/refresh', { jwt })
+
+    localStorage.setItem('auth', JSON.stringify(data))
+
+    return data
   }
 )

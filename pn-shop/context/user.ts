@@ -1,18 +1,31 @@
+import { loginCheckFx } from '@/api/auth'
 import { createSlice } from '@reduxjs/toolkit'
+import toast from 'react-hot-toast'
 
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    name: '',
-    email: '',
-    image: '',
+    user: '',
+    isLoadingUser: false,
   },
   reducers: {
     setUser: (state, action) => {
-      state.name = action.payload.name
-      state.email = action.payload.email
-      state.image = action.payload.image
+      state.user = action.payload
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginCheckFx.fulfilled, (state, { payload }) => {
+        state.user = payload
+        state.isLoadingUser = false
+      })
+      .addCase(loginCheckFx.pending, (state) => {
+        state.isLoadingUser = true
+      })
+      .addCase(loginCheckFx.rejected, (state, { error }) => {
+        toast.error(error.message as string)
+        state.isLoadingUser = false
+      })
   },
 })
 

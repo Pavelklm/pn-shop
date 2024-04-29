@@ -15,7 +15,7 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   return isClient ? (
     <StoreProvider>
       <EarthoOneProvider
-        domain={'localhost:3000'}
+        domain={''}
         clientId={`${process.env.NEXT_PUBLIC_OAUTH_CLIENT_ID}`}
       >
         <Layout>{children}</Layout>
