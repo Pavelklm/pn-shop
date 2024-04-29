@@ -1,15 +1,14 @@
 import { useAppSelector } from '@/context/hooks'
-import { ITakeUser } from '@/types/IUser'
 import { useEffect, useState } from 'react'
 
 export const useUserAvatar = () => {
-  const user = useAppSelector((state: { user: ITakeUser }) => state.user)
+  const user = useAppSelector((state) => state.user)
 
   const [src, setSrc] = useState('')
 
   useEffect(() => {
-    if (user?.image) {
-      setSrc(user?.image)
+    if (user.user?.image) {
+      setSrc(user.user?.image)
       return
     }
 
@@ -24,7 +23,7 @@ export const useUserAvatar = () => {
     }
 
     setSrc(oauthAvatar?.decodedToken.user.photoURL)
-  }, [user?.image])
+  }, [user.user?.image])
 
-  return { src, alt: user?.name }
+  return { src, alt: user.user?.name }
 }

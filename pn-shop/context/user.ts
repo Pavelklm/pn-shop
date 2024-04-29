@@ -5,7 +5,12 @@ import toast from 'react-hot-toast'
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    user: '',
+    user: {
+      name: '',
+      email: '',
+      image: '',
+      _id: '',
+    },
     isLoadingUser: false,
   },
   reducers: {
@@ -16,7 +21,9 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loginCheckFx.fulfilled, (state, { payload }) => {
-        state.user = payload
+        state.user.name = payload.name
+        state.user.email = payload.email
+        state.user._id = payload._id
         state.isLoadingUser = false
       })
       .addCase(loginCheckFx.pending, (state) => {
