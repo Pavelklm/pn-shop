@@ -12,6 +12,7 @@ import { openAuthPopup } from '@/context/auth'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { setLang } from '@/context/lang'
 import { useLang } from '@/hooks/useLang'
+import { triggerLoginCheck } from '@/lib/utils/common'
 import styles from '@/styles/header/index.module.scss'
 import stylesSwitch from '@/styles/switch.module.css'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
@@ -28,7 +29,10 @@ export const Header = () => {
   const dispatch = useAppDispatch()
   const [isChecked, setIsChecked] = useState(true)
   const isAuth = useAppSelector((state) => state.auth.isAuth)
-  const loginCheckSpinner = false
+  const loginCheckSpinner = useAppSelector((state) => state.user.isLoadingUser)
+  const user = useAppSelector((state) => state.user)
+
+  console.log(user)
 
   const handleToggle = () => {
     const newLang = isChecked ? 'ru' : 'en'
@@ -48,6 +52,11 @@ export const Header = () => {
       dispatch(setLang(langInLocalStorage as AllowedLangs))
     }
   }, [dispatch])
+
+  useEffect(() => {
+    triggerLoginCheck(dispatch)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
