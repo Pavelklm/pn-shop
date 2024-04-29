@@ -30,9 +30,6 @@ export const Header = () => {
   const [isChecked, setIsChecked] = useState(true)
   const isAuth = useAppSelector((state) => state.auth.isAuth)
   const loginCheckSpinner = useAppSelector((state) => state.user.isLoadingUser)
-  const user = useAppSelector((state) => state.user)
-
-  console.log(user)
 
   const handleToggle = () => {
     const newLang = isChecked ? 'ru' : 'en'
@@ -56,7 +53,7 @@ export const Header = () => {
   useEffect(() => {
     triggerLoginCheck(dispatch)
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [isAuth])
 
   return (
     <>

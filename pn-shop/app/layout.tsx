@@ -6,7 +6,7 @@ import './globalStyles/header-profile.css'
 
 export const metadata: Metadata = {
   title: 'pn-shop',
-  description: 'test shop',
+  description: 'pn-shop',
   icons: {
     icon: '/img/LogoKLM.svg',
   },
