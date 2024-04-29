@@ -12,16 +12,11 @@ export const handleJWTError = async (
     payload?: unknown
   },
 ) => {
-  console.log(errorName)
   if (errorName === JWTError.EXPIRED_JWT_TOKEN) {
     const auth = JSON.parse(localStorage.getItem('auth') as string)
-    console.log('auth', auth)
-    console.log(auth.refreshToken)
     const newTokens = await dispatch(
       refreshTokenFx({ jwt: auth.refreshToken })
     )
-
-    console.log(newTokens)
 
     if (repeatRequestAfterRefreshData) {
       const { repeatRequestMethodName } = repeatRequestAfterRefreshData
