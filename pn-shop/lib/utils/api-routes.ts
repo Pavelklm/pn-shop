@@ -7,7 +7,7 @@ export const getDbAndReqBody = async (
   clientPromise: Promise<MongoClient>,
   req: Request | null
 ) => {
-  const db = (await clientPromise).db(process.env.NEXT_PUBLIC_DB_NAME)
+  const db = (await clientPromise).db(process.env.NEXT_PUBLIC_DB_NAME) || 'pn-shop'
 
   if (req) {
     const reqBody = await req.json()
