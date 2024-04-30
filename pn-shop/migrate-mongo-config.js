@@ -9,7 +9,7 @@ const config = {
     url: process.env.NEXT_PUBLIC_DB_URL,
 
     // TODO Change this to your database name:
-    databaseName: process.env.NEXT_PUBLIC_DB_NAME,
+    databaseName: process.env.NEXT_PUBLIC_DB_NAME || 'pn-shop',
 
     options: {
       useNewUrlParser: true, // removes a deprecation warning when connecting
