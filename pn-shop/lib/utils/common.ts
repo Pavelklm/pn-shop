@@ -25,3 +25,10 @@ export const triggerLoginCheck = (dispatch: AppDispatch) => {
     console.error('Невозможно получить токен доступа')
   }
 }
+
+export const getWindowWidth = () => {
+  const { innerWidth: windowWidth } =
+    typeof window !== 'undefined' ? window : { innerWidth: 0 }
+
+  return { windowWidth }
+}

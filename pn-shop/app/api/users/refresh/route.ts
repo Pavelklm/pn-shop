@@ -45,7 +45,7 @@ export async function POST(req: Request) {
             },
             process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET as string,
             {
-              expiresIn: '1m',
+              expiresIn: '15m',
             }
           )
         }

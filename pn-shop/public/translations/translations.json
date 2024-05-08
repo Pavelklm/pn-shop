@@ -12,7 +12,8 @@
     "errors" : {
       "userAlreadyExists": "Пользователь с таким Email уже существует",
        "userNotFound": "Пользователь не найден",
-       "wrongPassword": "Неверный логин или пароль"
+       "wrongPassword": "Неверный логин или пароль",
+       "register_first": "Сначала зарегистрируйтесь!"
       },
     "auth_popup": {
       "registration_title": "Регистрация",
@@ -53,7 +54,8 @@
     "errors": {
        "userAlreadyExists": "User with this Email already exists",
         "userNotFound": "User not found",
-        "wrongPassword": "Wrong login or password"
+        "wrongPassword": "Wrong login or password",
+        "register_first": "Register first!"
       },
     "auth_popup": {
       "registration_title": "Registration",

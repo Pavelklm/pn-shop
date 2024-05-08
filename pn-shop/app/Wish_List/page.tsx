@@ -1,3 +1,5 @@
-const Wish_List = () => <div>Wish-List</div>
+import Wish_list from '@/components/templates/Wish_List/Wish_list'
 
-export default Wish_List
+export default function Wish_List() {
+  return <Wish_list />
+}
