@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { authReducer } from './auth'
+import { burgerReducer } from './burger'
 import { langReducer } from './lang'
 import { userReducer } from './user'
 
@@ -9,6 +10,7 @@ export const makeStore = () =>
       lang: langReducer,
       auth: authReducer,
       user: userReducer,
+      burger: burgerReducer,
     },
   })
 

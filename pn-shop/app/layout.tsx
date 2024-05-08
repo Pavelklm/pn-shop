@@ -1,8 +1,10 @@
 import PagesLayout from '@/components/elements/Layouts/PagesLayouts'
 import type { Metadata } from 'next'
 import './globalStyles/auth-popup.css'
+import './globalStyles/burger.css'
 import './globalStyles/globals.css'
 import './globalStyles/header-profile.css'
+import './globalStyles/header.scss'
 
 export const metadata: Metadata = {
   title: 'pn-shop',

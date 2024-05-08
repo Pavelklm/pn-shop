@@ -2,44 +2,38 @@
 /* eslint-disable space-infix-ops */
 /* eslint-disable prettier/prettier */
 'use client'
-import HeaderSvgLogin from '@/components/elements/Header__svg/Header__svg__login'
-import HeaderSvgSearch from '@/components/elements/Header__svg/Header__svg__search'
-import HeaderSvgShopingCart from '@/components/elements/Header__svg/Header__svg__shopping__cart'
-import HeaderSvgWishList from '@/components/elements/Header__svg/Header__svg__wishList'
 import Logo from '@/components/elements/Logo/Logo'
 import { AllowedLangs } from '@/constants/lang'
-import { openAuthPopup } from '@/context/auth'
+import { closeBurger, openBurger } from '@/context/burger'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { setLang } from '@/context/lang'
-import { useLang } from '@/hooks/useLang'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { triggerLoginCheck } from '@/lib/utils/common'
-import styles from '@/styles/header/index.module.scss'
-import stylesSwitch from '@/styles/switch.module.css'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { AnimatePresence, motion } from 'framer-motion'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import AuthPopup from '../AuthPopup/AuthPopup'
-import HeaderProfile from './HeaderProfile'
+import Burger from './Burger'
+import { HeaderButtons } from './HeaderButtons'
+import HeaderLinks from './HeaderLinks'
+import HeaderSwitch from './HeaderSwitch'
 
 export const Header = () => {
-  const { lang, translations } = useLang()
   const isAuthPopup = useAppSelector ((state) => state.auth.isAuthPopupOpen)
   const dispatch = useAppDispatch()
   const [isChecked, setIsChecked] = useState(true)
   const isAuth = useAppSelector((state) => state.auth.isAuth)
-  const loginCheckSpinner = useAppSelector((state) => state.user.isLoadingUser)
+  const isMedia900 = useMediaQuery(900)
+  const isBurgerOpen = useAppSelector((state) => state.burger.isBurgerOpen)
+
+  const handleToggleBurger = () => {
+    dispatch(isBurgerOpen ? closeBurger() : openBurger())
+  }
 
   const handleToggle = () => {
     const newLang = isChecked ? 'ru' : 'en'
     setIsChecked(!isChecked)
     dispatch(setLang(newLang))
     localStorage.setItem('lang', newLang)
-  }
-
-  const handleOpenAuthPopup = () => {
-    dispatch(openAuthPopup())
   }
 
   useEffect(() => {
@@ -56,106 +50,38 @@ export const Header = () => {
   }, [isAuth])
 
   return (
-    <>
-      <header className={styles.header}>
-        <div className={`container ${styles.header__container}`}>
-          <ul className={`list-reset ${styles.header__links}`}>
-            <li className={styles.header__links__item}>
-              <Link className={`link-reset ${styles.header__links__item__text}`} href='/'>
-                {translations[lang].header.Home}
-              </Link>
-            </li>
-            <li className={styles.header__links__item}>
-              <Link className={`link-reset ${styles.header__links__item__text}`} href='/Shop'>
-                {translations[lang].header.Shop}
-              </Link>
-            </li>
-            <li className={styles.header__links__item}>
-              <Link className={`link-reset ${styles.header__links__item__text}`} href={'/Blog'}>
-                {translations[lang].header.Blog}
-              </Link>
-            </li>
-            <li className={styles.header__links__item}>
-              <Link className={`link-reset ${styles.header__links__item__text}`} href={'/About'}>
-                {translations[lang].header.About}
-              </Link>
-            </li>
-            <li className={styles.header__links__item}>
-              <Link className={`link-reset ${styles.header__links__item__text}`} href='/Contacts'>
-                {translations[lang].header.Contacts}
-              </Link>
-            </li>
-          </ul>
-          <div className={styles.header__logo}>
-            <Logo />
-          </div>
-          <div className={styles.header__right}>
-            <div className={stylesSwitch.switch}>
-              <label className={stylesSwitch.switch__wrapper}>
-                <input
-                  type='checkbox'
-                  checked={isChecked}
-                  onChange={handleToggle}
-                />
-                <span className={stylesSwitch.switch__slider} />
-                <div />
-              </label>
+    <header className='header'>
+      <div className='container header__container'>
+        {!isMedia900 ? (
+          <HeaderLinks />
+        ) : (
+          <div>
+            <div className={`${isBurgerOpen ? 'burger active' : 'burger'}`} onClick={handleToggleBurger}>
+              <span />
             </div>
-            <ul className={`list-reset ${styles.header__buttons}`}>
-              <li className={styles.header__buttons__item}>
-                <button className={`btn-reset align-items-center ${styles.header__buttons__item__search}`}>
-                  <HeaderSvgSearch className={styles.header__buttons__item__svg} />
-                </button>
-              </li>
-              <li className={styles.header__buttons__item}>
-                <Link
-                  className={styles.header__buttons__item__wish_list}
-                  href={'/Wish_List'}
-                >
-                  <HeaderSvgWishList className={` align-items-center ${styles.header__buttons__item__svg}`} />
-                </Link>
-              </li>
-              <li className={styles.header__buttons__item}>
-                <Link
-                  className={styles.header__buttons__item__shopping_cart}
-                  href={'/Shopping_Cart'}
-                >
-                  <HeaderSvgShopingCart className={` align-items-center ${styles.header__buttons__item__svg}`} />
-                </Link>
-              </li>
-              <li className={styles.header__buttons__item}>
-
-                {isAuth ? (
-                  <HeaderProfile />
-                ) : (
-                  loginCheckSpinner ?
-                    <FontAwesomeIcon icon={faSpinner} spin /> :
-                    (
-                      <button
-                        className={`btn-reset align-items-center ${styles.header__buttons__item__login}`}
-                        onClick={handleOpenAuthPopup}
-                      >
-                        <HeaderSvgLogin className={styles.header__buttons__item__svg} />
-                      </button>
-                    )
-                )}
-              </li>
-            </ul>
+            <Burger isChecked={isChecked} handleToggle={handleToggle} />
           </div>
+        )}
+        <div className='header__logo'>
+          <Logo />
         </div>
-        <AnimatePresence>
-          {isAuthPopup && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.3, ease: 'easeInOut' } }}
-              exit={{ opacity: 0, transition: { duration: 0.3, ease: 'easeInOut' } }}
-              className='list-reset header-auth-popup'
-            >
-              <AuthPopup />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-    </>
+        <div className='header__right'>
+          {!isMedia900 && <HeaderSwitch isChecked={isChecked} handleToggle={handleToggle} />}
+          <HeaderButtons />
+        </div>
+      </div>
+      <AnimatePresence>
+        {isAuthPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.3, ease: 'easeInOut' } }}
+            exit={{ opacity: 0, transition: { duration: 0.3, ease: 'easeInOut' } }}
+            className='list-reset header-auth-popup'
+          >
+            <AuthPopup />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   )
 }

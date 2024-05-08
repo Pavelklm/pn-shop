@@ -7,10 +7,14 @@ import { Toaster } from 'react-hot-toast'
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const isAuthPopup = useAppSelector((state) => state.auth.isAuthPopupOpen)
   const dispatch = useAppDispatch()
+  const isBurgerOpen = useAppSelector((state) => state.burger.isBurgerOpen)
 
   return (
     <html lang='en'>
-      <body className={`${isAuthPopup ? 'overflow-hidden' : ''}`}>
+      <body
+        className={`${isAuthPopup || isBurgerOpen ? 'overflow-hidden' : ''}`}
+      >
+        <div className={`${isBurgerOpen ? 'burger__overlay' : ''}`} />
         <div
           className={`overlay ${isAuthPopup ? 'overlay-active' : ''}`}
           onClick={() => closePopup(dispatch)}

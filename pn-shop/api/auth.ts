@@ -84,6 +84,7 @@ export const singInFx = createAsyncThunk(
 export const loginCheckFx = createAsyncThunk(
   'auth/loginCheck',
   async ({ jwt }: { jwt: string }, thunkAPI: any) => {
+    const spinner = thunkAPI.getState().auth.isLoading
     const { dispatch } = thunkAPI
     try {
       const { data } = await api.get('/api/users/login-check', {
@@ -99,6 +100,13 @@ export const loginCheckFx = createAsyncThunk(
       dispatch(setIsAuth(true))
       return data.user
     } catch (error) {
+      dispatch(setIsAuth(false))
+      localStorage.removeItem('auth')
+      localStorage.removeItem('@@oneclientjs@@::jo3z0HE080apSUHIQG5x::@@user@@')
+      localStorage.removeItem(
+        '@@oneclientjs@@::jo3z0HE080apSUHIQG5x::jo3z0HE080apSUHIQG5x::openid profile email offline_access'
+      )
+      dispatch(spinner(false))
       toast.error((error as Error).message)
     }
   }
