@@ -27,7 +27,7 @@
   transition: color 0.3s ease 0s;
 }
 .switch div::before {
-  content: 'RU';
+  content: 'EN';
   position: relative;
   z-index: 5;
   font-weight: 600;
@@ -39,7 +39,7 @@
   transition: color 0.3s ease 0s;
 }
 .switch div::after {
-  content: 'EN';
+  content: 'RU';
   position: relative;
   z-index: 5;
   font-weight: 600;

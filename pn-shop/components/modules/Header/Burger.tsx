@@ -1,7 +1,10 @@
+import Logo from '@/components/elements/Logo/Logo'
 import { closeBurger } from '@/context/burger'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { useLang } from '@/hooks/useLang'
 import Link from 'next/link'
+import HeaderButtonsItemShoppingCart from './HeaderButtonsItemShoppingCart'
+import HeaderButtonsItemWishList from './HeaderButtonsItemWishList'
 import HeaderSwitch from './HeaderSwitch'
 
 const Burger = ({
@@ -23,6 +26,9 @@ const Burger = ({
       {isBurgerOpen ? (
         <>
           <div className='container burger__container'>
+            <div className='burger__logo'>
+              <Logo />
+            </div>
             <div className='burger__links'>
               <ul className='list-reset burger__links'>
                 <li className='burger__links__item' onClick={handleCloseBurger}>
@@ -70,12 +76,27 @@ const Burger = ({
                 </li>
               </ul>
             </div>
+            <div className='burger__buttons'>
+              <HeaderButtonsItemWishList className={'burger'}>
+                <div className='burger__buttons__item__text'>
+                  {translations[lang].burger.wishList}
+                </div>
+              </HeaderButtonsItemWishList>
+              <HeaderButtonsItemShoppingCart className={'burger'}>
+                <div className='burger__buttons__item__text'>
+                  {translations[lang].burger.ShoppingCart}
+                </div>
+              </HeaderButtonsItemShoppingCart>
+            </div>
             <HeaderSwitch isChecked={isChecked} handleToggle={handleToggle} />
           </div>
         </>
       ) : (
         <>
           <div className='container burger__container__close'>
+            <div className='burger__logo'>
+              <Logo />
+            </div>
             <div className='burger__links'>
               <ul className='list-reset burger__links'>
                 <li className='burger__links__item' onClick={handleCloseBurger}>
@@ -122,6 +143,18 @@ const Burger = ({
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div className='burger__buttons'>
+              <HeaderButtonsItemWishList className={'burger'}>
+                <div className='link-reset burger__buttons__item__text'>
+                  {translations[lang].burger.wishList}
+                </div>
+              </HeaderButtonsItemWishList>
+              <HeaderButtonsItemShoppingCart className={'burger'}>
+                <div className='link-reset burger__buttons__item__text'>
+                  {translations[lang].burger.ShoppingCart}
+                </div>
+              </HeaderButtonsItemShoppingCart>
             </div>
             <HeaderSwitch isChecked={isChecked} handleToggle={handleToggle} />
           </div>

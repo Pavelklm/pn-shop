@@ -22,14 +22,18 @@ export const singUpFx = createAsyncThunk(
   }) => {
     try {
       if (isOAuth) {
-        const { data } = await api.post('/api/users/oauth', {
-          name,
-          email,
-          password,
-        })
-        const userData = data.user ? data.user : data
-        onAuthSuccess('Authorization successful', userData, dispatch)
-        return userData
+        try {
+          const { data } = await api.post('/api/users/oauth', {
+            name,
+            email,
+            password,
+          })
+          const userData = data.user ? data.user : data
+          onAuthSuccess('Authorization successful', userData, dispatch)
+          return userData
+        } catch (error) {
+          toast.error((error as Error).message)
+        }
       }
       const { data } = await api.post('/api/users/signup', {
         name,
@@ -61,6 +65,9 @@ export const singInFx = createAsyncThunk(
           email,
           password,
         })
+        if (data.error) {
+          return Promise.reject(data.error)
+        }
         const userData = data.user ? data.user : data
         onAuthSuccess('Authorization successful', userData, dispatch)
         return userData
@@ -84,7 +91,6 @@ export const singInFx = createAsyncThunk(
 export const loginCheckFx = createAsyncThunk(
   'auth/loginCheck',
   async ({ jwt }: { jwt: string }, thunkAPI: any) => {
-    const spinner = thunkAPI.getState().auth.isLoading
     const { dispatch } = thunkAPI
     try {
       const { data } = await api.get('/api/users/login-check', {
@@ -100,13 +106,6 @@ export const loginCheckFx = createAsyncThunk(
       dispatch(setIsAuth(true))
       return data.user
     } catch (error) {
-      dispatch(setIsAuth(false))
-      localStorage.removeItem('auth')
-      localStorage.removeItem('@@oneclientjs@@::jo3z0HE080apSUHIQG5x::@@user@@')
-      localStorage.removeItem(
-        '@@oneclientjs@@::jo3z0HE080apSUHIQG5x::jo3z0HE080apSUHIQG5x::openid profile email offline_access'
-      )
-      dispatch(spinner(false))
       toast.error((error as Error).message)
     }
   }

@@ -5,6 +5,13 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+
+
+  }
+
+  &__burger{
+    display: flex;
+    gap: 20px;
   }
 
   &__right {
@@ -40,10 +47,7 @@
 
   &__logo {
     display: flex;
-
-      @media (max-width: 900px) {
-        margin-left: 153px;
-      }
+    margin-left: 42px;
   }
 
   &__buttons {
