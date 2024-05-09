@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Rubik';
   font-weight: 400;
@@ -86,7 +90,7 @@ body {
   top: 0;
   opacity: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 105;
   pointer-events: none;
   transition: opacity 0.3s ease; /* Добавим анимацию для свойства opacity */
 }

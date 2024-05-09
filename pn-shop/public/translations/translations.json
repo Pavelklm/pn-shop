@@ -7,7 +7,12 @@
       "Blog": "Блог",
       "About": "О нас",
       "logout": "Выход",
-      "profile": "Профиль"
+      "profile": "Профиль",
+      "search_infos": "Поиск..."
+    },
+    "burger" : {
+      "wishList": "Избранное",
+      "ShoppingCart": "Корзина"
     },
     "errors" : {
       "userAlreadyExists": "Пользователь с таким Email уже существует",
@@ -49,7 +54,12 @@
       "Blog": "Blog",
       "About": "About",
       "logout": "Logout",
-      "profile": "Profile"
+      "profile": "Profile",
+      "search_infos": "Search..."
+    },
+    "burger" : {
+      "wishList": "Wish-List",
+      "ShoppingCart": "Shopping-Cart"
     },
     "errors": {
        "userAlreadyExists": "User with this Email already exists",

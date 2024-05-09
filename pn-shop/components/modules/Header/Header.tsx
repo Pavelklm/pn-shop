@@ -14,6 +14,9 @@ import { useEffect, useState } from 'react'
 import AuthPopup from '../AuthPopup/AuthPopup'
 import Burger from './Burger'
 import { HeaderButtons } from './HeaderButtons'
+import HeaderButtonsItemLogin from './HeaderButtonsItemLogin'
+import HeaderButtonsItemSearch from './HeaderButtonsItemSearch'
+import HeaderButtonsItemShoppingCart from './HeaderButtonsItemShoppingCart'
 import HeaderLinks from './HeaderLinks'
 import HeaderSwitch from './HeaderSwitch'
 
@@ -22,7 +25,7 @@ export const Header = () => {
   const dispatch = useAppDispatch()
   const [isChecked, setIsChecked] = useState(true)
   const isAuth = useAppSelector((state) => state.auth.isAuth)
-  const isMedia900 = useMediaQuery(900)
+  const isMedia1000 = useMediaQuery(1000)
   const isBurgerOpen = useAppSelector((state) => state.burger.isBurgerOpen)
 
   const handleToggleBurger = () => {
@@ -30,7 +33,7 @@ export const Header = () => {
   }
 
   const handleToggle = () => {
-    const newLang = isChecked ? 'ru' : 'en'
+    const newLang = isChecked ? 'en' : 'ru'
     setIsChecked(!isChecked)
     dispatch(setLang(newLang))
     localStorage.setItem('lang', newLang)
@@ -38,7 +41,7 @@ export const Header = () => {
 
   useEffect(() => {
     const langInLocalStorage = localStorage.getItem('lang')
-    setIsChecked(langInLocalStorage === 'en')
+    setIsChecked(langInLocalStorage === 'ru')
     if (langInLocalStorage) {
       dispatch(setLang(langInLocalStorage as AllowedLangs))
     }
@@ -52,22 +55,26 @@ export const Header = () => {
   return (
     <header className='header'>
       <div className='container header__container'>
-        {!isMedia900 ? (
+        {!isMedia1000 ? (
           <HeaderLinks />
         ) : (
-          <div>
+          <div className='header__burger'>
             <div className={`${isBurgerOpen ? 'burger active' : 'burger'}`} onClick={handleToggleBurger}>
               <span />
             </div>
             <Burger isChecked={isChecked} handleToggle={handleToggle} />
+            <Logo />
           </div>
         )}
-        <div className='header__logo'>
-          <Logo />
-        </div>
+        {!isMedia1000 &&
+          <div className='header__logo'>
+            <Logo />
+          </div>}
+        {isMedia1000 && <HeaderButtonsItemSearch />}
         <div className='header__right'>
-          {!isMedia900 && <HeaderSwitch isChecked={isChecked} handleToggle={handleToggle} />}
-          <HeaderButtons />
+          {!isMedia1000 && <><HeaderSwitch isChecked={isChecked} handleToggle={handleToggle} /><HeaderButtons className='header' /></>
+          }
+          {isMedia1000 && <div className='header__buttons'><HeaderButtonsItemShoppingCart className={'header'} /> <HeaderButtonsItemLogin className={'header'} /></div>}
         </div>
       </div>
       <AnimatePresence>
