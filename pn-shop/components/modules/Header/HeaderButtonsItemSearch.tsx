@@ -35,7 +35,7 @@ const HeaderButtonsItemSearch = () => {
         </li>
       )}
       {isMedia1000 && (
-        <li className='list-reset header__buttons__search'>
+        <li className='header__buttons__search list-reset'>
           <label className='header__buttons__search__label'>
             <input
               type='text'
