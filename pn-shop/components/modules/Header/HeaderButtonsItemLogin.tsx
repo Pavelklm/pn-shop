@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import HeaderProfile from './HeaderProfile'
 interface Props {
   className: string
+  children?: React.ReactNode
 }
 
 const HeaderButtonsItemLogin: React.FC<Props> = ({ className }) => {

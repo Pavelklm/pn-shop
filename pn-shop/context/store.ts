@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { authReducer } from './auth'
 import { burgerReducer } from './burger'
 import { langReducer } from './lang'
+import { searchReducer } from './search'
 import { userReducer } from './user'
 
 export const makeStore = () =>
@@ -11,6 +12,7 @@ export const makeStore = () =>
       auth: authReducer,
       user: userReducer,
       burger: burgerReducer,
+      search: searchReducer,
     },
   })
 
