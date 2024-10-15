@@ -1,0 +1,116 @@
+.top__board{
+  position: relative;
+}
+
+.top__board__background {
+  position: absolute;
+  left: 0;
+  min-width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-repeat: repeat;
+}
+
+.top__board__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.top__board__content__text {
+  width: 600px;
+}
+
+.top__board__content__text__welcome {
+  width: max-content;
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  margin-top: 0;
+  }
+
+.top__board__content__text__title {
+  font-weight: 600;
+  font-size: 72px;
+  margin-bottom: 28px;
+  margin-top: 0;
+  }
+
+.top__board__content__text__subtitle {
+  font-weight: 400;
+  font-size: 32px;
+  margin: 0;
+}
+
+.top__board__content__text__subtitle__wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.top__board__content__text__subtitle__discount{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--orange-color);
+  margin: 0;
+}
+
+.top__board__content__text__description{
+  color: #808080;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.top__board__content__text__button{
+  width: 190px;
+  height: 50px;
+  border-radius: 53px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.top__board__content__text__button:hover{
+  background-color: var(--orange-color);
+  transition: all 0.5s ease;
+}
+
+.top__board__leaf {
+  position: absolute;
+  left: 250px;
+  bottom: -50px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1250px) {
+
+  .top__board__content{
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .top__board__content__text{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .top__board__content__text__description{
+    margin-bottom: 10px;
+  }
+}

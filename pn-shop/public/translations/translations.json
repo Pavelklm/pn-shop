@@ -44,6 +44,15 @@
       "required_password": "Введите пароль!",
       "min_4": "Минимум 4 символа!",
       "max_20": "Не более 20 символов!"
+    },
+    "top_board" : {
+      "welcome": "Добро пожаловать в KLM-Shop",
+      "title1": "Свежие и полезные",
+      "title2": "Органические продукты",
+      "sale1": "Скидки до",
+      "sale2": "30%",
+      "free_delivery": "Бесплатная доставка на любые товары. Мы доставляем — вы наслаждаетесь.",
+      "buy_now": "Купить сейчас"
     }
   },
   "en": {
@@ -91,6 +100,15 @@
       "required_password": "Enter password!",
       "min_4": "Minimum 4 characters!",
       "max_20": "Maximum 20 characters!"
+    },
+    "top_board": {
+      "welcome": "Welcome to KLM-Shop",
+      "title1" : "Fresh & Healthy",
+      "title2" : "Organic Products",
+      "sale1" : "Sale up to",
+      "sale2" : "30% OFF",
+      "free_delivery" : "Free shipping on all your order. we deliver, you enjoy",
+      "buy_now" : "Shop Now"
     }
   }
   

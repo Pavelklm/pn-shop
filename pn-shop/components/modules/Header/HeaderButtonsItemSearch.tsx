@@ -1,53 +1,42 @@
 import HeaderSvgSearch from '@/components/elements/Header__svg/Header__svg__search'
-import { useLang } from '@/hooks/useLang'
+import HeaderSearch from '@/components/elements/SearchHeader/HeaderSearch'
+import { useAppDispatch, useAppSelector } from '@/context/hooks'
+import { toggleSearch } from '@/context/search'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 const HeaderButtonsItemSearch = () => {
   const isMedia1000 = useMediaQuery(1000)
-  const { lang, translations } = useLang()
+  const dispatch = useAppDispatch()
+  const isSearchOpen = useAppSelector((state) => state.search.isSearchOpen)
 
-  const handleInputFocus = (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-  ) => {
-    if (!e.target.value) {
-      e.target.classList.remove('placeholder')
-    }
-  }
-
-  const handleInputBlur = (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-  ) => {
-    if (e.target.value) {
-      e.target.classList.remove('placeholder')
-    }
-    if (!e.target.value) {
-      e.target.classList.add('placeholder')
-    }
+  const handleToggleSearch = () => {
+    dispatch(toggleSearch())
   }
 
   return (
     <>
-      {!isMedia1000 && (
+      {!isMedia1000 && !isSearchOpen && (
         <li className='header__buttons__item'>
-          <button className='btn-reset align-items-center $header__buttons__item__search'>
+          <button
+            className='btn-reset align-items-center header__buttons__item__search'
+            onClick={handleToggleSearch}
+          >
             <HeaderSvgSearch className='header__buttons__item__svg' />
           </button>
         </li>
       )}
+      <HeaderSearch
+        handleToggleSearch={handleToggleSearch}
+        className={isSearchOpen ? 'search' : 'search-close'}
+        classNameMedia='main'
+      />
+
       {isMedia1000 && (
-        <li className='header__buttons__search list-reset'>
-          <label className='header__buttons__search__label'>
-            <input
-              type='text'
-              className='header__buttons__search__input placeholder'
-              onFocus={handleInputFocus}
-              onBlur={handleInputBlur}
-            />
-            <span className='header__buttons__search__floating_label'>
-              {translations[lang].header.search_infos}
-            </span>
-          </label>
-        </li>
+        <HeaderSearch
+          className=''
+          classNameMedia='media'
+          handleToggleSearch={handleToggleSearch}
+        />
       )}
     </>
   )

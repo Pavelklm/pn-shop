@@ -26,7 +26,9 @@ export const Header = () => {
   const [isChecked, setIsChecked] = useState(true)
   const isAuth = useAppSelector((state) => state.auth.isAuth)
   const isMedia1000 = useMediaQuery(1000)
+  const isMedia400 = useMediaQuery(400)
   const isBurgerOpen = useAppSelector((state) => state.burger.isBurgerOpen)
+  const isSearchOpen = useAppSelector((state) => state.search.isSearchOpen)
 
   const handleToggleBurger = () => {
     dispatch(isBurgerOpen ? closeBurger() : openBurger())
@@ -72,9 +74,18 @@ export const Header = () => {
           </div>}
         {isMedia1000 && <HeaderButtonsItemSearch />}
         <div className='header__right'>
-          {!isMedia1000 && <><HeaderSwitch isChecked={isChecked} handleToggle={handleToggle} /><HeaderButtons className='header' /></>
+          {!isMedia1000 &&
+            <>
+              {!isSearchOpen && <HeaderSwitch isChecked={isChecked} handleToggle={handleToggle} />}
+              <HeaderButtons className='header' />
+            </>
           }
-          {isMedia1000 && <div className='header__buttons'><HeaderButtonsItemShoppingCart className={'header'} /> <HeaderButtonsItemLogin className={'header'} /></div>}
+          {isMedia1000 &&
+            <div className='header__buttons'>
+              <HeaderButtonsItemLogin className={'header'} />
+              { !isMedia400 &&
+                <HeaderButtonsItemShoppingCart className={'header'} />
+              }</div>}
         </div>
       </div>
       <AnimatePresence>

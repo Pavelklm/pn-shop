@@ -1,11 +1,12 @@
 .header {
+  margin: 8px 0;
+
   &__container {
     position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-
 
   }
 
@@ -16,9 +17,12 @@
 
   &__right {
     display: flex;
+    justify-content: flex-end;
+    width: 400px;
     align-items: center;
     flex-direction: row;
     gap: 40px;
+    position: relative;
   }
 
   &__links {
@@ -47,7 +51,6 @@
 
   &__logo {
     display: flex;
-    margin-left: 42px;
   }
 
   &__buttons {
@@ -59,10 +62,12 @@
 
   &__buttons__item {
     display: flex;
+    justify-content: center;
     align-items: center;
     fill: #fff;
     width: 32px;
     height: 32px;
+    border-radius: 50%;
 
 
     &__svg {
@@ -72,6 +77,12 @@
     :hover {
       transition: fill 0.3s ease;
       fill: var(--main-color);
+    }
+
+    &__search__open {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
 
   }

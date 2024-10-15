@@ -23,8 +23,9 @@ const HeaderProfile = forwardRef<HTMLDivElement, IWrappedComponentProps>(
           <Image
             src={src ? src : '/img/profile.png'}
             alt={alt ? alt : 'profile'}
-            width={32}
-            height={32}
+            width={24}
+            height={24}
+            draggable={false}
           />
         </button>
         <AnimatePresence>

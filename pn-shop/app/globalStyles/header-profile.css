@@ -1,4 +1,5 @@
 .header-profile__popup {
+  display: flex;
   position: relative;
   height: 24px;
   width: 24px;
@@ -32,10 +33,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 22px;
-  width: 22px;
   border-radius: 50%;
   overflow: hidden;
+  height: 24px;
 }
 
 .header-profile__btn img {
