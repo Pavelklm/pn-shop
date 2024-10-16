@@ -6,6 +6,7 @@ import './globalStyles/globals.css'
 import './globalStyles/header-profile.css'
 import './globalStyles/header.scss'
 import './globalStyles/search.css'
+import './globalStyles/top-board.css'
 
 export const metadata: Metadata = {
   title: 'pn-shop',

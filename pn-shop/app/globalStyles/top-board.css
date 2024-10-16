@@ -22,7 +22,7 @@
 }
 
 .top__board__content__text {
-  width: 600px;
+  width: 750px;
 }
 
 .top__board__content__text__welcome {
@@ -38,8 +38,10 @@
 .top__board__content__text__title {
   font-weight: 600;
   font-size: 72px;
-  margin-bottom: 28px;
+  margin-bottom: 15px;
   margin-top: 0;
+  line-height: 1;
+  font-size: 60px;
   }
 
 .top__board__content__text__subtitle {
@@ -95,6 +97,10 @@
   z-index: -1;
 }
 
+.ru__title-top{
+  font-size: 60px;
+}
+
 @media screen and (max-width: 1250px) {
 
   .top__board__content{
@@ -112,5 +118,42 @@
   }
   .top__board__content__text__description{
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+
+  .ru__title-top{
+    font-size: 40px;
+  }
+  .en__title-top{
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .top__board__content__text__description{
+    margin-bottom: 20px;
+  }
+
+  .top__board__content__text__welcome{
+    margin-bottom: 20px;
+  }
+  
+  .top__board__content__text__subtitle__wrapper{
+    margin-bottom: 20px;
+  }
+
+  .top__board__content__text__title{
+    margin-bottom: 20px;
+  }
+
+  .ru__title-top{
+    font-size: 30px;  
+  }
+
+  .en__title-top{
+    font-size: 35px;
   }
 }
