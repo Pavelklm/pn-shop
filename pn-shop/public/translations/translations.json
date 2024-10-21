@@ -53,6 +53,16 @@
       "sale2": "30%",
       "free_delivery": "Бесплатная доставка на любые товары. Мы доставляем — вы наслаждаетесь.",
       "buy_now": "Купить сейчас"
+    },
+    "advantage" : {
+      "title1" : "Бесплатная доставка",
+      "title2" : "Быстрая поддержка 24/7",
+      "title3" : "100% Безопасная оплата",
+      "title4" : "Гарантия 30 дней",
+      "description1" : "Бесплатная доставка с учётом скидки",
+      "description2" : "Быстрая поддержка 24/7",
+      "description3" : "Безопасная оплата",
+      "description4" : "30 дней гарантия"
     }
   },
   "en": {
@@ -109,6 +119,16 @@
       "sale2" : "30% OFF",
       "free_delivery" : "Free shipping on all your order. we deliver, you enjoy",
       "buy_now" : "Shop Now"
+    },
+    "advantage" : {
+      "title1" : "Free Shipping",
+      "title2" : "Great Support 24/7",
+      "title3" : "100% Sucure Payment",
+      "title4" : "Money-Back Guarantee",
+      "description1" : "Free shipping with discount",
+      "description2" : "Instant access to Contact",
+      "description3" : "We ensure your money is save",
+      "description4" : "30 days money-back"
     }
   }
   

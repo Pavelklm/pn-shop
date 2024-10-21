@@ -1,5 +1,6 @@
 import PagesLayout from '@/components/elements/Layouts/PagesLayouts'
 import type { Metadata } from 'next'
+import './globalStyles/advantage.css'
 import './globalStyles/auth-popup.css'
 import './globalStyles/burger.css'
 import './globalStyles/globals.css'

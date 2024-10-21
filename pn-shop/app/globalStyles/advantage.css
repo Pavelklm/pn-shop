@@ -1,0 +1,42 @@
+.advantage__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 40px 0 !important;
+}
+
+.advantage__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 40px;
+  position: relative;
+  fill: url(#pattern_242_195040);
+  transition: all 0.3s ease;
+}
+
+.advantage__wrapper:hover {
+  fill: url(#pattern_242_195220);
+  transition: all 0.3s ease;
+}
+
+.advantage__image {
+  width: 72px;
+  height: 72px;
+  fill: #00b307;
+}
+
+.advantage__wrapper:hover .advantage__image {
+  fill: #fff;
+  transition: all 0.5s ease;
+}
+
+.advantage__title {
+  margin: 0;
+}
+
+.advantage__description {
+  margin: 0;
+}
