@@ -67,13 +67,13 @@ const TopBoard = () => {
               className='btn-reset top__board__content__text__link'
               href={'/Shopping_Cart'}
             >
-              <button className='btn-reset top__board__content__text__button'>
+              <button className='top__board__content__text__button btn-reset'>
                 {translations[lang].top_board.buy_now}
               </button>
             </Link>
           ) : (
             <button
-              className='btn-reset top__board__content__text__button'
+              className='top__board__content__text__button btn-reset'
               onClick={handleOpenAuthPopup}
             >
               {translations[lang].top_board.buy_now}
