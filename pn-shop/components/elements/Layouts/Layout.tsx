@@ -1,3 +1,4 @@
+import { Footer } from '@/components/modules/Footer/Footer'
 import { Header } from '@/components/modules/Header/Header'
 import { closeBurger } from '@/context/burger'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
@@ -29,7 +30,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         />
         <Toaster position='top-center' reverseOrder={false} />
         <Header />
-        {children}
+        <main className='main'>{children}</main>
+        <Footer />
       </body>
     </html>
   )
