@@ -1,6 +1,7 @@
 import Advantage__svg__car from '@/components/elements/Advantage__svg/Advantage__svg__car'
 import Advantage__svg__headphones from '@/components/elements/Advantage__svg/Adventage__svg__headphones'
 import Advantage__svg__shopping_bag from '@/components/elements/Advantage__svg/Adventage__svg__shopping-bag'
+import Advantage__svg__box from '@/components/elements/Advantage__svg/Adventage__svg_box'
 import { useLang } from '@/hooks/useLang'
 
 const Advantage = () => {
@@ -39,7 +40,7 @@ const Advantage = () => {
           </p>
         </div>
         <div className='advantage__wrapper'>
-          <Advantage__svg__car className='advantage__image' />
+          <Advantage__svg__box className='advantage__image' />
           <h3 className='advantage__title'>
             {translations[lang].advantage.title4}
           </h3>
