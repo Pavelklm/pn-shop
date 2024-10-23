@@ -1,11 +1,22 @@
+import { openAuthPopup } from '@/context/auth'
+import { useAppDispatch } from '@/context/hooks'
 import { useLang } from '@/hooks/useLang'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { useUser } from '@/hooks/useUser'
 import Image from 'next/image'
+import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 const TopBoard = () => {
   const isMedia1250 = useMediaQuery(1250)
   const isMedia420 = useMediaQuery(420)
   const { lang, translations } = useLang()
+  const dispatch = useAppDispatch()
+  const { user } = useUser()
+  const handleOpenAuthPopup = () => {
+    dispatch(openAuthPopup())
+    toast.error(translations[lang].errors.register_first)
+  }
 
   return (
     <section className='top__board'>
@@ -51,9 +62,23 @@ const TopBoard = () => {
           <p className='top__board__content__text__description'>
             {translations[lang].top_board.free_delivery}
           </p>
-          <button className='btn-reset top__board__content__text__button'>
-            {translations[lang].top_board.buy_now}
-          </button>
+          {user ? (
+            <Link
+              className='btn-reset top__board__content__text__link'
+              href={'/Shopping_Cart'}
+            >
+              <button className='btn-reset top__board__content__text__button'>
+                {translations[lang].top_board.buy_now}
+              </button>
+            </Link>
+          ) : (
+            <button
+              className='btn-reset top__board__content__text__button'
+              onClick={handleOpenAuthPopup}
+            >
+              {translations[lang].top_board.buy_now}
+            </button>
+          )}
         </div>
       </div>
       <div className='top__board__leaf'>
