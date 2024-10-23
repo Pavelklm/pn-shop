@@ -27,6 +27,8 @@ const TopBoard = () => {
           width={!isMedia1250 ? 640 : isMedia420 ? 320 : 480}
           quality={100}
           draggable={false}
+          priority={true}
+          loading='eager'
         />
         <div className='top__board__content__text'>
           <h5 className='top__board__content__text__welcome'>
