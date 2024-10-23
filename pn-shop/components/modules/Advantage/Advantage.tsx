@@ -1,6 +1,7 @@
 import Advantage__svg__car from '@/components/elements/Advantage__svg/Advantage__svg__car'
+import Advantage__svg__headphones from '@/components/elements/Advantage__svg/Adventage__svg__headphones'
+import Advantage__svg__shopping_bag from '@/components/elements/Advantage__svg/Adventage__svg__shopping-bag'
 import { useLang } from '@/hooks/useLang'
-import Image from 'next/image'
 
 const Advantage = () => {
   const { lang, translations } = useLang()
@@ -18,15 +19,7 @@ const Advantage = () => {
           </p>
         </div>
         <div className='advantage__wrapper'>
-          <Image
-            className='advantage__image'
-            width={36}
-            height={36}
-            src={'/img/headphones.svg'}
-            alt={'headphones'}
-            quality={100}
-            draggable={false}
-          />
+          <Advantage__svg__headphones className='advantage__image' />
 
           <h3 className='advantage__title'>
             {translations[lang].advantage.title2}
@@ -36,15 +29,7 @@ const Advantage = () => {
           </p>
         </div>
         <div className='advantage__wrapper'>
-          <Image
-            className='advantage__image'
-            width={36}
-            height={36}
-            src={'/img/shopping-bag.svg'}
-            alt={'shopping-bag'}
-            quality={100}
-            draggable={false}
-          />
+          <Advantage__svg__shopping_bag className='advantage__image' />
 
           <h3 className='advantage__title'>
             {translations[lang].advantage.title3}
@@ -54,16 +39,7 @@ const Advantage = () => {
           </p>
         </div>
         <div className='advantage__wrapper'>
-          <Image
-            className='advantage__image'
-            width={36}
-            height={36}
-            src={'/img/box.svg'}
-            alt={'box'}
-            quality={100}
-            draggable={false}
-          />
-
+          <Advantage__svg__car className='advantage__image' />
           <h3 className='advantage__title'>
             {translations[lang].advantage.title4}
           </h3>
