@@ -27,6 +27,11 @@ body {
   overflow-x: hidden;
   margin: 0;
   margin-top: 8px;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .container {

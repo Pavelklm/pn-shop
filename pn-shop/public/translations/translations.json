@@ -63,6 +63,12 @@
       "description2" : "Быстрая поддержка 24/7",
       "description3" : "Гарантия безопасности ваших денег",
       "description4" : "Возврат денег в течении 30 дней"
+    },
+    "subscribe" : {
+      "title" : "Подпишитесь на рассылку",
+      "placeholder" : "Ваш Email",
+      "subscribe" : "Подписаться",
+      "description" : "И узнайте о новых поступлениях"
     }
   },
   "en": {
@@ -129,6 +135,12 @@
       "description2" : "Instant access to Contact",
       "description3" : "We ensure your money is save",
       "description4" : "30 days money-back"
+    },
+    "subscribe" : {
+      "title": "Subscribe to our newsletter",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "description": "Be informed about new products"
     }
   }
   
