@@ -1,4 +1,4 @@
-.top__board{
+.top__board {
   position: relative;
 }
 
@@ -33,7 +33,7 @@
   text-transform: uppercase;
   margin-bottom: 8px;
   margin-top: 0;
-  }
+}
 
 .top__board__content__text__title {
   font-weight: 600;
@@ -42,7 +42,7 @@
   margin-top: 0;
   line-height: 1;
   font-size: 60px;
-  }
+}
 
 .top__board__content__text__subtitle {
   font-weight: 400;
@@ -50,7 +50,7 @@
   margin: 0;
 }
 
-.top__board__content__text__subtitle__wrapper{
+.top__board__content__text__subtitle__wrapper {
   display: flex;
   flex-direction: row;
   gap: 12px;
@@ -58,7 +58,7 @@
   margin-bottom: 12px;
 }
 
-.top__board__content__text__subtitle__discount{
+.top__board__content__text__subtitle__discount {
   display: flex;
   align-items: center;
   font-weight: 600;
@@ -67,7 +67,7 @@
   margin: 0;
 }
 
-.top__board__content__text__description{
+.top__board__content__text__description {
   color: #808080;
   font-weight: 400;
   font-size: 14px;
@@ -75,7 +75,7 @@
   margin-bottom: 32px;
 }
 
-.top__board__content__text__button{
+.top__board__content__text__button {
   width: 190px;
   height: 50px;
   border-radius: 53px;
@@ -85,7 +85,7 @@
   font-size: 16px;
 }
 
-.top__board__content__text__button:hover{
+.top__board__content__text__button:hover {
   background-color: var(--orange-color);
   transition: all 0.5s ease;
 }
@@ -94,66 +94,62 @@
   position: absolute;
   left: 250px;
   bottom: -50px;
-  z-index: -1;
 }
 
-.ru__title-top{
+.ru__title-top {
   font-size: 60px;
 }
 
 @media screen and (max-width: 1250px) {
-
-  .top__board__content{
+  .top__board__content {
     flex-direction: column;
     align-items: center;
     gap: 0;
   }
-  
-  .top__board__content__text{
+
+  .top__board__content__text {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-  .top__board__content__text__description{
+  .top__board__content__text__description {
     margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: 650px) {
-
-  .ru__title-top{
+  .ru__title-top {
     font-size: 40px;
   }
-  .en__title-top{
+  .en__title-top {
     font-size: 48px;
   }
 }
 
 @media screen and (max-width: 420px) {
-
-  .top__board__content__text__description{
+  .top__board__content__text__description {
     margin-bottom: 20px;
   }
 
-  .top__board__content__text__welcome{
-    margin-bottom: 20px;
-  }
-  
-  .top__board__content__text__subtitle__wrapper{
+  .top__board__content__text__welcome {
     margin-bottom: 20px;
   }
 
-  .top__board__content__text__title{
+  .top__board__content__text__subtitle__wrapper {
     margin-bottom: 20px;
   }
 
-  .ru__title-top{
-    font-size: 30px;  
+  .top__board__content__text__title {
+    margin-bottom: 20px;
   }
 
-  .en__title-top{
+  .ru__title-top {
+    font-size: 30px;
+  }
+
+  .en__title-top {
     font-size: 35px;
   }
 }

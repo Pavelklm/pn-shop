@@ -3,6 +3,11 @@
   --orange-color: #ff8a00;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
