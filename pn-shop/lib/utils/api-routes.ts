@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs'
 import jwt, { VerifyErrors } from 'jsonwebtoken'
 import { Db, MongoClient } from 'mongodb'
+import { getFullDateAndTime } from '../helpers/getFullDateAndTime'
 import { IUser } from './../../types/IUser'
 
 export const getDbAndReqBody = async (
@@ -49,12 +50,19 @@ export const createUserAndGenerateTokens = async (db: Db, reqBody: IUser) => {
     password: hash,
     image: '',
     role: 'user',
+    createdAt: getFullDateAndTime,
+    updatedAt: getFullDateAndTime,
+    subscribed: false,
+    subEmail: '',
   })
   return generateTokens(reqBody.name, reqBody.email)
 }
 
 export const findUserByEmail = async (db: Db, email: string) =>
   db.collection('users').findOne({ email })
+
+export const findUserBySubEmail = async (db: Db, subEmail: string) =>
+  db.collection('users').findOne({ subEmail })
 
 export const getAuthRouteData = async (
   clientPromise: Promise<MongoClient>,
@@ -65,7 +73,9 @@ export const getAuthRouteData = async (
     clientPromise,
     withReqBody ? req : null
   )
+
   const token = req.headers.get('authorization')?.split(' ')[1]
+
   const validatedTokenResult = await isValidAccessToken(token)
 
   return { db, reqBody, validatedTokenResult, token }
@@ -107,3 +117,17 @@ export const isValidAccessToken = async (token: string | undefined) => {
 
 export const parseJwt = (token: string) =>
   JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString())
+
+export const updateSubscribeUser = async (
+  db: Db,
+  email: string,
+  subEmail: string,
+  updatedAt = getFullDateAndTime
+) => {
+  await db
+    .collection('users')
+    .updateOne(
+      { email },
+      { $set: { subscribed: true, subEmail: subEmail, updatedAt: updatedAt } }
+    )
+}

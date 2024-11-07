@@ -5,6 +5,10 @@ export interface IUser {
   password: string
   image?: string
   role?: string
+  createdAt: string
+  updatedAt: string
+  subscribed: boolean
+  subEmail?: string
 }
 
 export interface ITakeUser {

@@ -18,7 +18,8 @@
       "userAlreadyExists": "Пользователь с таким Email уже существует",
        "userNotFound": "Пользователь не найден",
        "wrongPassword": "Неверный логин или пароль",
-       "register_first": "Сначала зарегистрируйтесь!"
+       "register_first": "Сначала зарегистрируйтесь!",
+       "email_required": "Email обязателен!"
       },
     "auth_popup": {
       "registration_title": "Регистрация",
@@ -67,8 +68,10 @@
     "subscribe" : {
       "title" : "Подпишитесь на рассылку",
       "placeholder" : "Ваш Email",
-      "subscribe" : "Подписаться",
-      "description" : "И узнайте о новых поступлениях"
+      "button" : "Подписаться",
+      "description" : "И узнайте о новых поступлениях",
+      "success1" : "Спасибо за подписку!",
+      "success2" : "Теперь вы будете в курсе новых поступлений"
     }
   },
   "en": {
@@ -90,7 +93,8 @@
        "userAlreadyExists": "User with this Email already exists",
         "userNotFound": "User not found",
         "wrongPassword": "Wrong login or password",
-        "register_first": "Register first!"
+        "register_first": "Register first!",
+        "email_required": "Email is required!"
       },
     "auth_popup": {
       "registration_title": "Registration",
@@ -140,7 +144,9 @@
       "title": "Subscribe to our newsletter",
       "placeholder": "Enter your email",
       "button": "Subscribe",
-      "description": "Be informed about new products"
+      "description": "Be informed about new products",
+      "success1": "Thank you for subscribing!",
+      "success2": "Now you will be notified about new products"
     }
   }
   
