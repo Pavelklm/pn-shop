@@ -33,6 +33,8 @@ export async function GET(req: Request) {
         _id: user?._id,
         image: user?.image,
         role: user?.role,
+        subscribed: user?.subscribed,
+        subEmail: user?.subEmail,
       },
     })
   } catch (error) {

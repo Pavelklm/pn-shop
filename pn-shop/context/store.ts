@@ -3,6 +3,7 @@ import { authReducer } from './auth'
 import { burgerReducer } from './burger'
 import { langReducer } from './lang'
 import { searchReducer } from './search'
+import { subscribeReducer } from './subscribe'
 import { userReducer } from './user'
 
 export const makeStore = () =>
@@ -13,6 +14,7 @@ export const makeStore = () =>
       user: userReducer,
       burger: burgerReducer,
       search: searchReducer,
+      subscribe: subscribeReducer,
     },
   })
 

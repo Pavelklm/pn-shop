@@ -7,6 +7,7 @@ import './globalStyles/globals.css'
 import './globalStyles/header-profile.css'
 import './globalStyles/header.scss'
 import './globalStyles/search.css'
+import './globalStyles/spinner.css'
 import './globalStyles/Subscribe.css'
 import './globalStyles/top-board.css'
 

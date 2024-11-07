@@ -11,6 +11,8 @@ const userSlice = createSlice({
       image: '',
       _id: '',
       role: '',
+      subscribed: false,
+      subEmail: '',
     },
     isLoadingUser: false,
   },
@@ -27,6 +29,8 @@ const userSlice = createSlice({
         state.user._id = payload?._id
         state.user.image = payload?.image
         state.user.role = payload?.role
+        state.user.subscribed = payload?.subscribed
+        state.user.subEmail = payload?.subEmail
         state.isLoadingUser = false
       })
       .addCase(loginCheckFx.pending, (state) => {
