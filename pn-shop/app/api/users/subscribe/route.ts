@@ -4,7 +4,7 @@ import {
   findUserBySubEmail,
   getAuthRouteData,
   parseJwt,
-  updateSubscribeUser
+  updateSubscribeUser,
 } from '@/lib/utils/api-routes'
 import { IUser } from '@/types/IUser'
 import { NextResponse } from 'next/server'
