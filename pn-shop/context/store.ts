@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { authReducer } from './auth'
 import { burgerReducer } from './burger'
 import { langReducer } from './lang'
+import { mobileReducer } from './mobile'
 import { searchReducer } from './search'
 import { subscribeReducer } from './subscribe'
 import { userReducer } from './user'
@@ -15,6 +16,7 @@ export const makeStore = () =>
       burger: burgerReducer,
       search: searchReducer,
       subscribe: subscribeReducer,
+      mobile: mobileReducer,
     },
   })
 

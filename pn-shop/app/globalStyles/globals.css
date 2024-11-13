@@ -5,6 +5,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -94,6 +95,10 @@ main {
   padding-right: 9.5px;
 }
 
+.overflow-mobile-hidden {
+  overflow-y: hidden;
+}
+
 .overlay {
   background: #16181b;
   height: 100%;
@@ -104,7 +109,7 @@ main {
   width: 100%;
   z-index: 105;
   pointer-events: none;
-  transition: opacity 0.3s ease; /* Добавим анимацию для свойства opacity */
+  transition: opacity 0.3s ease;
 }
 
 .overlay-active {
@@ -135,4 +140,8 @@ main {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   background: var(--main-color);
+}
+
+p {
+  margin: 0;
 }
