@@ -1,9 +1,11 @@
+import { isMobileFx } from '@/api/isMobile'
 import { Footer } from '@/components/modules/Footer/Footer'
 import { Header } from '@/components/modules/Header/Header'
 import { closeBurger } from '@/context/burger'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
+import { setMobile } from '@/context/mobile'
 import { closePopup } from '@/lib/utils/auth'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -14,11 +16,30 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     dispatch(closeBurger())
   }
 
+  const isMobile = useAppSelector((state) => state.mobile.isMobile)
+
+  useEffect(() => {
+    const checkIsMobile = async () => {
+      const result = await dispatch(isMobileFx()).unwrap()
+      dispatch(setMobile(result))
+    }
+
+    checkIsMobile()
+  }, [dispatch])
+
+  useEffect(() => {
+    console.log('isMobile', isMobile)
+  }, [isMobile])
+
   return (
-    <html lang='en'>
-      <body
-        className={`${isAuthPopup || isBurgerOpen ? 'overflow-hidden' : ''}`}
-      >
+    <html
+      className={
+        `${(!isMobile && isAuthPopup) || isBurgerOpen ? 'overflow-hidden' : ''}` ||
+        `${(isMobile && isAuthPopup) || isBurgerOpen ? 'overflow-mobile-hidden' : ''}`
+      }
+      lang='en'
+    >
+      <body>
         <div className={`${isBurgerOpen ? 'burger__overlay' : ''}`} />
         <div
           className={`${isBurgerOpen ? 'burger__outside' : ''}`}
