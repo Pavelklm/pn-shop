@@ -172,7 +172,7 @@ const Subscribe = () => {
                     onClick={handleSubscribe}
                     className='btn-reset subscribe__btn'
                   >
-                    {!isLoadingSubscribe ? (
+                    {isLoadingSubscribe ? (
                       <FontAwesomeIcon icon={faSpinner} spin />
                     ) : (
                       translations[lang].subscribe.button

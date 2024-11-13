@@ -2,6 +2,7 @@ import clientPromise from '@/lib/mongodb'
 import {
   createUserAndGenerateTokens,
   findUserByEmail,
+  findUserBySubEmail,
   getDbAndReqBody,
 } from '@/lib/utils/api-routes'
 import { NextResponse } from 'next/server'
@@ -12,7 +13,9 @@ export async function POST(req: Request) {
 
     const user = await findUserByEmail(db, reqBody.email)
 
-    if (user) {
+    const userSubEmail = await findUserBySubEmail(db, reqBody.email)
+
+    if (user || userSubEmail) {
       return NextResponse.json({
         warningMessage: 'User with this Email already exists',
       })

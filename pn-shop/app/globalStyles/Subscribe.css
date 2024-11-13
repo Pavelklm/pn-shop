@@ -221,4 +221,8 @@
   .subscribe__success__text1 {
     font-size: 14px;
   }
+
+  .subscribe__btn {
+    min-width: 120px;
+  }
 }
