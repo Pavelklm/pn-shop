@@ -1,14 +1,14 @@
 import { getFullDateAndTime } from '@/lib/helpers/getFullDateAndTime'
 import clientPromise from '@/lib/mongodb'
 import {
-  findUserByEmail,
   findUserBySubEmail,
   getAuthRouteData,
   parseJwt,
-  updateSubscribeUser,
+  updateSubscribeUser
 } from '@/lib/utils/api-routes'
 import { IUser } from '@/types/IUser'
 import { NextResponse } from 'next/server'
+import { findUserByEmail } from './../../../../lib/utils/api-routes'
 
 export async function POST(req: Request) {
   try {
@@ -22,9 +22,15 @@ export async function POST(req: Request) {
     )) as unknown as IUser | null
 
     const { subEmail } = await req.json()
+    const isCurrentUserEmail = subEmail === userEmail
     const foundUserSubEmail = await findUserBySubEmail(db, subEmail)
+    const foundUserByEmail = await findUserByEmail(db, subEmail)
 
-    if (user && foundUserSubEmail === null) {
+    if (
+      user !== null &&
+      foundUserSubEmail === null &&
+      (foundUserByEmail === null || isCurrentUserEmail)
+    ) {
       await updateSubscribeUser(db, user.email, subEmail, getFullDateAndTime)
       return NextResponse.json({ status: 200, message: 'Subscription updated' })
     }
@@ -36,7 +42,7 @@ export async function POST(req: Request) {
       })
     }
 
-    if (foundUserSubEmail) {
+    if (foundUserSubEmail || foundUserByEmail) {
       return NextResponse.json({
         status: 404,
         warningMessage: 'User with this email already subscribed',
