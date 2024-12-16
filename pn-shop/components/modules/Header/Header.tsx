@@ -12,6 +12,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { handleSignIn } from '@/lib/utils/auth'
 import { triggerLoginCheck } from '@/lib/utils/common'
 import { AnimatePresence, motion } from 'framer-motion'
+import { Session } from 'next-auth'
 import { getSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import AuthPopup from '../AuthPopup/AuthPopup'
@@ -55,9 +56,16 @@ export const Header = () => {
   useEffect(() => {
     triggerLoginCheck(dispatch)
     setLoadingUserTrue()
-    getSession().then((session) => {
-      if (session) {
-        handleSignIn(session.user.email, '', true, dispatch, session.user?.image, session.user?.name)
+    getSession().then((session: Session | null) => {
+      if (session && session.user) {
+        handleSignIn(
+          session.user.email || '',
+          '',
+          true,
+          dispatch,
+          session.user.image || '',
+          session.user.name || 'New User'
+        )
       }
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
