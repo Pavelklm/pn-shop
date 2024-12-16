@@ -3,6 +3,6 @@ import api from './apiInstance'
 
 export const isMobileFx = createAsyncThunk('device/isMobile', async () => {
   const { data } = await api.post('/api/isMobile')
-  console.log('isMobile client', data)
+  console.log('is', data)
   return data.isMobile
 })
