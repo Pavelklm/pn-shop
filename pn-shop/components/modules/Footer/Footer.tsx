@@ -12,6 +12,7 @@ export const Footer = () => {
   const { lang, translations } = useLang()
   const isMedia1024 = useMediaQuery(1024)
   const isMedia860 = useMediaQuery(860)
+  console.log('footer')
 
   return (
     <>
