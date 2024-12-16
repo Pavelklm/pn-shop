@@ -7,9 +7,12 @@ import { AllowedLangs } from '@/constants/lang'
 import { closeBurger, openBurger } from '@/context/burger'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { setLang } from '@/context/lang'
+import { setLoadingUserTrue } from '@/context/user'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { handleSignIn } from '@/lib/utils/auth'
 import { triggerLoginCheck } from '@/lib/utils/common'
 import { AnimatePresence, motion } from 'framer-motion'
+import { getSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import AuthPopup from '../AuthPopup/AuthPopup'
 import Burger from './Burger'
@@ -51,6 +54,12 @@ export const Header = () => {
 
   useEffect(() => {
     triggerLoginCheck(dispatch)
+    setLoadingUserTrue()
+    getSession().then((session) => {
+      if (session) {
+        handleSignIn(session.user.email, '', true, dispatch, session.user?.image, session.user?.name)
+      }
+    })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth])
 
@@ -65,12 +74,12 @@ export const Header = () => {
               <span />
             </div>
             <Burger isChecked={isChecked} handleToggle={handleToggle} />
-            <Logo />
+            <Logo className='logo' />
           </div>
         )}
         {!isMedia1000 &&
           <div className='header__logo'>
-            <Logo />
+            <Logo className='logo' />
           </div>}
         {isMedia1000 && <HeaderButtonsItemSearch />}
         <div className='header__right'>

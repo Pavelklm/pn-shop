@@ -58,74 +58,76 @@ const Subscribe = () => {
   }
 
   return !isMedia1200 ? (
-    <div className='subscribe subscribe__container container'>
-      <div className='subscribe__wrapper'>
-        <div className='subscribe__information'>
-          <Image
-            className='subscribe__image'
-            src={'/img/mail.svg'}
-            alt={'subscribe'}
-            height={56}
-            width={56}
-            quality={100}
-            draggable={false}
-          />
-          <div className='subscribe__text'>
-            <h3 className='subscribe__title'>
-              {translations[lang].subscribe.title}
-            </h3>
-            <p className='subscribe__description'>
-              {translations[lang].subscribe.description}
-            </p>
+    <div className='container'>
+      <div className='subscribe subscribe__container'>
+        <div className='subscribe__wrapper'>
+          <div className='subscribe__information'>
+            <Image
+              className='subscribe__image'
+              src={'/img/mail.svg'}
+              alt={'subscribe'}
+              height={56}
+              width={56}
+              quality={100}
+              draggable={false}
+            />
+            <div className='subscribe__text'>
+              <h3 className='subscribe__title'>
+                {translations[lang].subscribe.title}
+              </h3>
+              <p className='subscribe__description'>
+                {translations[lang].subscribe.description}
+              </p>
+            </div>
           </div>
-        </div>
-        {!isSubscribed ? (
-          <>
-            <div className='subscribe__media_wrapper'>
-              <form className='subscribe__form'>
-                <label className='subscribe__label'>
-                  <input
-                    className='subscribe__input placeholder'
-                    type='email'
-                    onFocus={handleInputFocus}
-                    onBlur={handleInputBlur}
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                  />
+          {!isSubscribed ? (
+            <>
+              <div className='subscribe__media_wrapper'>
+                <form className='subscribe__form'>
+                  <label className='subscribe__label'>
+                    <input
+                      className='subscribe__input placeholder'
+                      type='email'
+                      onFocus={handleInputFocus}
+                      onBlur={handleInputBlur}
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                    />
 
-                  <span className='subscribe__buttons__search__floating_label'>
-                    {translations[lang].subscribe.placeholder}
-                  </span>
-                  <button
-                    onClick={handleSubscribe}
-                    className='btn-reset subscribe__btn'
-                  >
-                    {isLoadingSubscribe ? (
-                      <FontAwesomeIcon icon={faSpinner} spin />
-                    ) : (
-                      translations[lang].subscribe.button
-                    )}
-                  </button>
-                </label>
-              </form>
-              <SubscribeSocialLinks className='subscribe__social_media' />
-            </div>
-          </>
-        ) : (
-          <>
-            <div className='subscribe__media_wrapper__success'>
-              <div className='subscribe__success'>
-                <div className='subscribe__success__text1'>
-                  {translations[lang].subscribe.success1}
-                </div>
-                <div className='subscribe__success__text2'>
-                  {translations[lang].subscribe.success2}
-                </div>
+                    <span className='subscribe__buttons__search__floating_label'>
+                      {translations[lang].subscribe.placeholder}
+                    </span>
+                    <button
+                      onClick={handleSubscribe}
+                      className='btn-reset subscribe__btn'
+                    >
+                      {isLoadingSubscribe ? (
+                        <FontAwesomeIcon icon={faSpinner} spin />
+                      ) : (
+                        translations[lang].subscribe.button
+                      )}
+                    </button>
+                  </label>
+                </form>
+                <SubscribeSocialLinks className='subscribe__social_media' />
               </div>
-              <SubscribeSocialLinks className='subscribe__social_media__success' />
-            </div>
-          </>
-        )}
+            </>
+          ) : (
+            <>
+              <div className='subscribe__media_wrapper__success'>
+                <div className='subscribe__success'>
+                  <div className='subscribe__success__text1'>
+                    {translations[lang].subscribe.success1}
+                  </div>
+                  <div className='subscribe__success__text2'>
+                    {translations[lang].subscribe.success2}
+                  </div>
+                </div>
+                <SubscribeSocialLinks className='subscribe__social_media__success' />
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   ) : (

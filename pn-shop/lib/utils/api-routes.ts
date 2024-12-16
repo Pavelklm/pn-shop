@@ -45,10 +45,10 @@ export const createUserAndGenerateTokens = async (db: Db, reqBody: IUser) => {
   const hash = bcrypt.hashSync(reqBody.password, salt)
 
   await db.collection('users').insertOne({
-    name: reqBody.name,
+    name: reqBody.name || 'New User',
     email: reqBody.email,
     password: hash,
-    image: '',
+    image: reqBody.image || '',
     role: 'user',
     createdAt: getFullDateAndTime,
     updatedAt: getFullDateAndTime,

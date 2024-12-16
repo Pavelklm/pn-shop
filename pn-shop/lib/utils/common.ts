@@ -17,11 +17,10 @@ export const isUserAuth = (dispatch: AppDispatch) => {
 
 export const triggerLoginCheck = (dispatch: AppDispatch) => {
   if (!isUserAuth(dispatch)) {
-    return
+    return false
   }
 
   const auth = JSON.parse(localStorage.getItem('auth') as string) ?? {}
-
   if (auth.accessToken) {
     dispatch(loginCheckFx({ jwt: auth.accessToken }))
   } else {

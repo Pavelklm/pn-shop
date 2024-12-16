@@ -27,10 +27,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     checkIsMobile()
   }, [dispatch])
 
-  useEffect(() => {
-    console.log('isMobile', isMobile)
-  }, [isMobile])
-
   return (
     <html
       className={

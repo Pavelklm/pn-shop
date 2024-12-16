@@ -15,8 +15,10 @@ const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
   const { lang, translations } = useLang()
   const dispatch = useAppDispatch()
   const { isLoading } = useSelector((state: RootState) => state.auth)
-  const { spinner, register, errors, handleSubmit, handleSignUpWithOAuth } =
-    useAuthForm(isLoading, isSideActive, (userData) =>
+  const { spinner, register, errors, handleSubmit } = useAuthForm(
+    isLoading,
+    isSideActive,
+    (userData) =>
       handleSignUp(
         userData.name,
         userData.email,
@@ -24,7 +26,7 @@ const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
         userData.isOAuth,
         dispatch
       )
-    )
+  )
 
   const submitForm = (data: IInputs) =>
     handleSignIn(data.email, data.password, false, dispatch)
@@ -69,7 +71,7 @@ const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
             </div>
           </div>
         </form>
-        <AuthPopupSocials handleSignUpWithOAuth={handleSignUpWithOAuth} />
+        <AuthPopupSocials />
       </div>
     </div>
   )

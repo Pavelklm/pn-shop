@@ -56,4 +56,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+  .advantage__description {
+    font-size: 15px;
+  }
 }

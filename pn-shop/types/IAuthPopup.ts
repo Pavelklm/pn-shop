@@ -11,6 +11,7 @@ export interface ISignUpFx {
   name?: string
   email: string
   isOAuth?: boolean
+  image?: string
 }
 
 export interface IAuthSideProps {
