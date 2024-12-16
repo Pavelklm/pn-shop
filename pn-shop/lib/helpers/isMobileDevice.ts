@@ -7,7 +7,11 @@ export const isMobileDevice = () => {
   const { get } = headers()
   const ua = get('user-agent')
 
+  console.log('isMobileDevice server', ua)
+
   const device = new UAParser(ua || '').getDevice()
+
+  console.log('isMobileDevice device', device.type)
 
   if (device.type === 'mobile') return true
 
