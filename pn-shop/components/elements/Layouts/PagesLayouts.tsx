@@ -1,7 +1,7 @@
 'use client'
 
 import StoreProvider from '@/app/StoreProvider'
-import { EarthoOneProvider } from '@eartho/one-client-react'
+import { SessionProvider } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import Layout from './Layout'
 
@@ -12,21 +12,20 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
     setIsClient(true)
   }, [])
 
-  return isClient ? (
+  if (!isClient) {
+    return (
+      <html lang='en'>
+        <body />
+      </html>
+    )
+  }
+
+  return (
     <StoreProvider>
-      <EarthoOneProvider
-        domain={''}
-        clientId={`${process.env.NEXT_PUBLIC_OAUTH_CLIENT_ID}`}
-      >
+      <SessionProvider>
         <Layout>{children}</Layout>
-      </EarthoOneProvider>
+      </SessionProvider>
     </StoreProvider>
-  ) : (
-    <html lang='en'>
-      <body>
-        <></>
-      </body>
-    </html>
   )
 }
 

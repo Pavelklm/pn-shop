@@ -5,37 +5,33 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { signIn } from 'next-auth/react'
 
-const AuthPopupSocials = ({
-  handleSignUpWithOAuth,
-}: {
-  handleSignUpWithOAuth: VoidFunction
-}) => (
+const socials = [
+  { id: 'github', icon: faGithub, className: 'gh-color', effect: 'beat' },
+  { id: 'google', icon: faGoogle, className: 'g-color', effect: 'fade' },
+  // eslint-disable-next-line prettier/prettier
+  { id: 'facebook', icon: faFacebook, className: 'fb-color', effect: 'beatFade' },
+  { id: 'twitter', icon: faTwitter, className: 'tw-color', effect: 'bounce' },
+]
+
+const AuthPopupSocials = () => (
   <div className='cart-body__socials'>
-    <button
-      className='btn-reset socials__btn gh-color'
-      onClick={handleSignUpWithOAuth}
-    >
-      <FontAwesomeIcon icon={faGithub} beat />
-    </button>
-    <button
-      className='btn-reset socials__btn g-color'
-      onClick={handleSignUpWithOAuth}
-    >
-      <FontAwesomeIcon icon={faGoogle} fade />
-    </button>
-    <button
-      className='btn-reset socials__btn fb-color'
-      onClick={handleSignUpWithOAuth}
-    >
-      <FontAwesomeIcon icon={faFacebook} beatFade />
-    </button>
-    <button
-      className='btn-reset socials__btn tw-color'
-      onClick={handleSignUpWithOAuth}
-    >
-      <FontAwesomeIcon icon={faTwitter} bounce />
-    </button>
+    {socials.map(({ id, icon, className, effect }) => (
+      <button
+        key={id}
+        className={`btn-reset socials__btn ${className}`}
+        onClick={() => {
+          if (id === 'facebook') {
+            alert(`${id} login is not implemented yet`)
+          } else {
+            signIn(id)
+          }
+        }}
+      >
+        <FontAwesomeIcon icon={icon} {...{ [effect]: true }} />
+      </button>
+    ))}
   </div>
 )
 

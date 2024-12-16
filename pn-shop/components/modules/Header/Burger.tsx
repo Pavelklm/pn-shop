@@ -27,7 +27,7 @@ const Burger = ({
         <>
           <div className='container burger__container'>
             <div className='burger__logo'>
-              <Logo />
+              <Logo className={''} />
             </div>
             <div className='burger__links'>
               <ul className='list-reset burger__links'>
@@ -95,7 +95,7 @@ const Burger = ({
         <>
           <div className='container burger__container__close'>
             <div className='burger__logo'>
-              <Logo />
+              <Logo className={''} />
             </div>
             <div className='burger__links'>
               <ul className='list-reset burger__links'>

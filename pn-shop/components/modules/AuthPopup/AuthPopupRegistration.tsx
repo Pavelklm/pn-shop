@@ -19,8 +19,10 @@ const AuthPopupRegistration = ({
   const { lang, translations } = useLang()
   const dispatch = useAppDispatch()
   const { isLoading } = useSelector((state: RootState) => state.auth)
-  const { spinner, register, errors, handleSubmit, handleSignUpWithOAuth } =
-    useAuthForm(isLoading, isSideActive, (userData) =>
+  const { spinner, register, errors, handleSubmit } = useAuthForm(
+    isLoading,
+    isSideActive,
+    (userData) =>
       handleSignUp(
         userData.name,
         userData.email,
@@ -28,7 +30,7 @@ const AuthPopupRegistration = ({
         userData.isOAuth,
         dispatch
       )
-    )
+  )
 
   const submitForm = (data: IInputs) =>
     handleSignUp(data.name, data.email, data.password, false, dispatch)
@@ -74,7 +76,7 @@ const AuthPopupRegistration = ({
             </div>
           </div>
         </form>
-        <AuthPopupSocials handleSignUpWithOAuth={handleSignUpWithOAuth} />
+        <AuthPopupSocials />
       </div>
     </div>
   )

@@ -72,8 +72,24 @@
       "description" : "И узнайте о новых поступлениях",
       "success1" : "Спасибо за подписку!",
       "success2" : "Теперь вы будете в курсе новых поступлений"
+    },
+    "footer" : {
+        "description": "«KLM» — это компания, занимающаяся производством и продажей натуральных продуктов, выращенных с заботой о здоровье и экологии. Мы гарантируем высокое качество и свежесть, отбирая продукцию у проверенных фермеров и минимизируя обработку, чтобы сохранить максимальную пользу и вкус. Наша миссия — сделать доступной качественную и экологически чистую еду для всех, кто стремится к здоровому образу жизни и заботится о будущем планеты.",
+        "title": "Мой аккаунт",
+        "profile": "Профиль",
+        "order_history": "История заказов",
+        "shopping_cart": "Корзина",
+        "wishlist": "Список желаний",
+        "helps": "Помощь",
+        "faqs": "FAQs",
+        "terms_condition": "Условия использования",
+        "privacy_policy": "Политика конфиденциальности",
+        "about": "О нас",
+        "shop": "Магазин"
     }
-  },
+    
+
+    },
   "en": {
     "header":{
       "Home": "Home",
@@ -147,6 +163,20 @@
       "description": "Be informed about new products",
       "success1": "Thank you for subscribing!",
       "success2": "Now you will be notified about new products"
+    },
+    "footer" : {
+      "description": "KLM is dedicated to producing and offering natural, eco-friendly products grown with care for health and the environment. We guarantee premium quality and freshness by sourcing from trusted farmers and minimizing processing to retain maximum nutritional value and flavor. Our mission is to make high-quality, sustainable food accessible to everyone who values healthy living and cares about the planet's future.",
+      "title": "My Account",
+      "profile": "Profile",
+      "order_history": "Order history",
+      "shopping_cart": "Shopping cart",
+      "wishlist": "Wishlist",
+      "helps": "Helps",
+      "faqs": "FAQs",
+      "terms_condition": "Terms & Conditions",
+      "privacy_policy": "Privacy Policy",
+      "about": "About",
+      "shop": "Shop"
     }
   }
   

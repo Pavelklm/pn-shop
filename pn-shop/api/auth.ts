@@ -58,12 +58,16 @@ export const singInFx = createAsyncThunk(
     password,
     dispatch,
     isOAuth,
+    image,
+    name,
   }: ISignUpFx & { dispatch: AppDispatch }) => {
     try {
       if (isOAuth) {
         const { data } = await api.post('/api/users/oauth', {
           email,
           password,
+          image,
+          name,
         })
         if (data.error) {
           return Promise.reject(data.error)

@@ -94,7 +94,7 @@
 
 .top__board__leaf {
   position: absolute;
-  left: 250px;
+  left: 10%;
   bottom: -50px;
 }
 
@@ -121,30 +121,49 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .ru__title-top {
-    font-size: 40px;
+    font-size: 50px;
   }
   .en__title-top {
     font-size: 48px;
   }
+  .top__board__content__text__subtitle {
+    font-size: 32px;
+  }
+  .top__board__content__text__subtitle__discount {
+    font-size: 32px;
+  }
+  .top__board__leaf {
+    left: 0%;
+  }
+  .top__board__content__text__description {
+    font-size: 12px;
+  }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 750px) {
+  .ru__title-top {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .top__board__content__text__description {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: 11px;
   }
 
   .top__board__content__text__welcome {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .top__board__content__text__subtitle__wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .top__board__content__text__title {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .ru__title-top {
@@ -153,5 +172,11 @@
 
   .en__title-top {
     font-size: 35px;
+  }
+  .top__board__content__text__subtitle {
+    font-size: 24px;
+  }
+  .top__board__content__text__subtitle__discount {
+    font-size: 24px;
   }
 }

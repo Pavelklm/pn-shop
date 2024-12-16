@@ -1,6 +1,7 @@
 import { singInFx, singUpFx } from '@/api/auth'
 import { closeAuthPopup, setIsAuth } from '@/context/auth'
 import { AppDispatch } from '@/context/store'
+import { signOut } from 'next-auth/react'
 import toast from 'react-hot-toast'
 
 export const closePopup = (dispatch: AppDispatch) => {
@@ -31,9 +32,15 @@ export const handleSignIn = (
   email: string,
   password: string,
   isOAuth: boolean,
-  dispatch: AppDispatch
+  dispatch: AppDispatch,
+  image?: string,
+  name?: string
 ) => {
-  dispatch(singInFx({ email, password, isOAuth, dispatch }))
+  dispatch(singInFx({ email, password, isOAuth, dispatch, image, name }))
+}
+
+export const handleLogout = async () => {
+  await signOut({ callbackUrl: '/' })
 }
 
 export const nameValidationRules = (

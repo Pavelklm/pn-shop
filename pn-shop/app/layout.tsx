@@ -1,12 +1,14 @@
 import PagesLayout from '@/components/elements/Layouts/PagesLayouts'
 import type { Metadata } from 'next'
+// prettier-ignore
+import './globalStyles/globals.css'
+// prettier-ignore
 import './globalStyles/advantage.css'
 import './globalStyles/auth-popup.css'
 import './globalStyles/burger.css'
 import './globalStyles/footer.css'
-import './globalStyles/globals.css'
 import './globalStyles/header-profile.css'
-import './globalStyles/header.scss'
+import './globalStyles/header.css'
 import './globalStyles/search.css'
 import './globalStyles/spinner.css'
 import './globalStyles/Subscribe.css'

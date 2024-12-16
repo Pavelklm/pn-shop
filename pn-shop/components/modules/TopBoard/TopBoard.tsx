@@ -25,8 +25,9 @@ const TopBoard = () => {
         src={'/img/background__Top.svg'}
         alt={'background'}
         quality={100}
-        objectFit='cover'
-        layout='fill'
+        priority={true}
+        style={{ objectFit: 'cover' }}
+        fill={true}
         draggable={false}
       />
       <div className='top__board__content'>
