@@ -58,6 +58,7 @@ export const Header = () => {
     setLoadingUserTrue()
     getSession().then((session: Session | null) => {
       if (session && session.user) {
+        console.log(session.user)
         handleSignIn(
           session.user.email || '',
           '',

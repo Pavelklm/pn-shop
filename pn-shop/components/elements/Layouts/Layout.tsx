@@ -20,9 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const checkIsMobile = async () => {
-      console.log('isMobile client vxod')
       const result = await dispatch(isMobileFx()).unwrap()
-      console.log('isMobile client vixod', result)
       dispatch(setMobile(result))
     }
 
