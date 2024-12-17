@@ -1,5 +1,5 @@
 import {
-  faFacebook,
+  faDiscord,
   faGithub,
   faGoogle,
   faTwitter,
@@ -11,7 +11,7 @@ const socials = [
   { id: 'github', icon: faGithub, className: 'gh-color', effect: 'beat' },
   { id: 'google', icon: faGoogle, className: 'g-color', effect: 'fade' },
   // eslint-disable-next-line prettier/prettier
-  { id: 'facebook', icon: faFacebook, className: 'fb-color', effect: 'beatFade' },
+  { id: 'discord', icon: faDiscord, className: 'fb-color', effect: 'beatFade' },
   { id: 'twitter', icon: faTwitter, className: 'tw-color', effect: 'bounce' },
 ]
 
@@ -22,11 +22,7 @@ const AuthPopupSocials = () => (
         key={id}
         className={`btn-reset socials__btn ${className}`}
         onClick={() => {
-          if (id === 'facebook') {
-            alert(`${id} login is not implemented yet`)
-          } else {
-            signIn(id)
-          }
+          signIn(id)
         }}
       >
         <FontAwesomeIcon icon={icon} {...{ [effect]: true }} />

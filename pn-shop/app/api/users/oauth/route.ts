@@ -18,6 +18,10 @@ export async function POST(req: Request) {
     }
 
     const tokens = generateTokens(user.name, reqBody.email)
+    const image = reqBody.image
+    await db
+      .collection('users')
+      .updateOne({ email: reqBody.email }, { $set: { image } })
     return NextResponse.json(tokens)
   } catch (error) {
     throw new Error((error as Error).message)
