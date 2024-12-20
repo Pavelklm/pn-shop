@@ -46,12 +46,10 @@ const authOptions = {
       account?: Account | null
       profile?: unknown | null
     }) {
-      console.log(await account)
       if (account && profile) {
         if (account.provider === 'google') {
           token.picture = profile.picture || null
         } else if (account.provider === 'discord') {
-          console.log(profile)
           const discordProfile = profile as {
             image_url: string | null | undefined
             id: string

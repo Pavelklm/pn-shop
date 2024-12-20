@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false, // Отключает Strict Mode
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {

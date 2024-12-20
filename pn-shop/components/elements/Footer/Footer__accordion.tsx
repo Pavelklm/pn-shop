@@ -1,21 +1,96 @@
-/* eslint-disable max-len */
-import { Accordion, AccordionItem } from '@nextui-org/react'
+import Accordion from '@material-ui/core/Accordion'
+import AccordionDetails from '@material-ui/core/AccordionDetails'
+import AccordionSummary from '@material-ui/core/AccordionSummary'
+import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import React from 'react'
+import Footer__link_account from './Footer__link_account'
+import Footer__link_help from './Footer__link_help'
+import Footer__link_klm from './Footer__link_klm'
+import {
+  Footer__link__title_account,
+  Footer__link__title_help,
+  Footer__link__title_klm,
+} from './Footer__links__titles'
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+  },
+  heading: {
+    flexBasis: '70%',
+  },
+}))
 
 export default function FooterAccordion() {
-  const defaultContent =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  const classes = useStyles()
+  const [expanded, setExpanded] = React.useState(false)
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  }
 
   return (
-    <Accordion variant='splitted'>
-      <AccordionItem key='1' aria-label='Accordion 1' title='Accordion 1'>
-        {defaultContent}
-      </AccordionItem>
-      <AccordionItem key='2' aria-label='Accordion 2' title='Accordion 2'>
-        {defaultContent}
-      </AccordionItem>
-      <AccordionItem key='3' aria-label='Accordion 3' title='Accordion 3'>
-        {defaultContent}
-      </AccordionItem>
-    </Accordion>
+    <div className={classes.root}>
+      <Accordion
+        expanded={expanded === 'panel1'}
+        onChange={handleChange('panel1')}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls='panel1bh-content'
+          id='panel1bh-header'
+        >
+          <Typography className={classes.heading}>
+            <Footer__link__title_account />
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            <div className='footer__links'>
+              <Footer__link_account />
+            </div>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === 'panel2'}
+        onChange={handleChange('panel2')}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls='panel2bh-content'
+          id='panel2bh-header'
+        >
+          <Typography className={classes.heading}>
+            <Footer__link__title_help />
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            <Footer__link_help />
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === 'panel3'}
+        onChange={handleChange('panel3')}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls='panel3bh-content'
+          id='panel3bh-header'
+        >
+          <Typography className={classes.heading}>
+            <Footer__link__title_klm />
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            <Footer__link_klm />
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
   )
 }
