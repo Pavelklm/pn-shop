@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import Accordion from '@material-ui/core/Accordion'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
@@ -13,7 +14,8 @@ import {
   Footer__link__title_help,
   Footer__link__title_klm,
 } from './Footer__links__titles'
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(() => ({
   root: {
     width: '100%',
   },
@@ -24,11 +26,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FooterAccordion() {
   const classes = useStyles()
-  const [expanded, setExpanded] = React.useState(false)
+  const [expanded, setExpanded] = React.useState<string | false>(false)
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
-  }
+  const handleChange =
+    (panel: string) =>
+    (_event: React.ChangeEvent<unknown>, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false)
+    }
 
   return (
     <div className={classes.root}>
@@ -41,12 +45,12 @@ export default function FooterAccordion() {
           aria-controls='panel1bh-content'
           id='panel1bh-header'
         >
-          <Typography className={classes.heading}>
+          <Typography component='div' className={classes.heading}>
             <Footer__link__title_account />
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography component='div'>
             <div className='footer__links'>
               <Footer__link_account />
             </div>
@@ -62,12 +66,12 @@ export default function FooterAccordion() {
           aria-controls='panel2bh-content'
           id='panel2bh-header'
         >
-          <Typography className={classes.heading}>
+          <Typography component='div' className={classes.heading}>
             <Footer__link__title_help />
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography component='div'>
             <Footer__link_help />
           </Typography>
         </AccordionDetails>
@@ -81,12 +85,12 @@ export default function FooterAccordion() {
           aria-controls='panel3bh-content'
           id='panel3bh-header'
         >
-          <Typography className={classes.heading}>
+          <Typography component='div' className={classes.heading}>
             <Footer__link__title_klm />
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography component='div'>
             <Footer__link_klm />
           </Typography>
         </AccordionDetails>

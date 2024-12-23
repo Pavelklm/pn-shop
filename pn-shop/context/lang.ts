@@ -11,4 +11,6 @@ const langSlice = createSlice({
 
 export const { setLang } = langSlice.actions
 
+export const selectLang = (state: { lang: AllowedLangs }) => state.lang
+
 export const langReducer = langSlice.reducer

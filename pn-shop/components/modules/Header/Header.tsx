@@ -28,15 +28,15 @@ export const Header = () => {
   const isAuthPopup = useAppSelector ((state) => state.auth.isAuthPopupOpen)
   const dispatch = useAppDispatch()
   const [isChecked, setIsChecked] = useState(true)
-  const isAuth = useAppSelector((state) => state.auth.isAuth)
   const isMedia1000 = useMediaQuery(1000)
   const isMedia400 = useMediaQuery(400)
   const isBurgerOpen = useAppSelector((state) => state.burger.isBurgerOpen)
   const isSearchOpen = useAppSelector((state) => state.search.isSearchOpen)
-
   const handleToggleBurger = () => {
     dispatch(isBurgerOpen ? closeBurger() : openBurger())
   }
+
+  const currentLang = localStorage.getItem('lang') as AllowedLangs
 
   const handleToggle = () => {
     const newLang = isChecked ? 'en' : 'ru'
@@ -57,19 +57,20 @@ export const Header = () => {
     triggerLoginCheck(dispatch)
     setLoadingUserTrue()
     getSession().then((session: Session | null) => {
-      if (session && session.user) {
+      if (session && session.user && session.user.email && session.user.name) {
         handleSignIn(
-          session.user.email || '',
+          session.user.email,
           '',
           true,
           dispatch,
           session.user.image || '',
-          session.user.name || 'New User'
+          session.user.name,
+          currentLang,
         )
       }
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuth])
+  }, [])
 
   return (
     <header className='header'>

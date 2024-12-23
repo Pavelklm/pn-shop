@@ -1,4 +1,5 @@
-import { singInFx, singUpFx } from '@/api/auth'
+import { loginCheckFx, singInFx, singUpFx } from '@/api/auth'
+import { AllowedLangs } from '@/constants/lang'
 import { closeAuthPopup, setIsAuth } from '@/context/auth'
 import { AppDispatch } from '@/context/store'
 import { signOut } from 'next-auth/react'
@@ -17,6 +18,9 @@ export const onAuthSuccess = <T>(
   toast.success(message)
   closePopup(dispatch)
   dispatch(setIsAuth(true))
+
+  const token = (data as { accessToken: string }).accessToken
+  dispatch(loginCheckFx({ jwt: token }))
 }
 
 export const handleSignUp = (
@@ -34,11 +38,21 @@ export const handleSignIn = (
   isOAuth: boolean,
   dispatch: AppDispatch,
   image?: string,
-  name?: string
+  name?: string,
+  currentLang: AllowedLangs = AllowedLangs.EN
 ) => {
-  dispatch(singInFx({ email, password, isOAuth, dispatch, image, name }))
+  dispatch(
+    singInFx({
+      email,
+      password,
+      isOAuth,
+      dispatch,
+      image,
+      name,
+      currentLang,
+    })
+  )
 }
-
 export const handleLogout = async () => {
   await signOut({ callbackUrl: '/' })
 }
@@ -66,3 +80,12 @@ export const emailValidationRules = (
     message,
   },
 })
+
+export const generateRandomPassword = (length: number) =>
+  Array.from(
+    { length },
+    () =>
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[
+        Math.floor(Math.random() * 62)
+      ]
+  ).join('')
