@@ -5,6 +5,7 @@ import {
   generateTokens,
   getDbAndReqBody,
 } from '@/lib/utils/api-routes'
+import { generateRandomPassword } from '@/lib/utils/auth'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
@@ -13,8 +14,20 @@ export async function POST(req: Request) {
     const user = await findUserByEmail(db, reqBody.email)
 
     if (!user) {
+      const passwordUser = generateRandomPassword(6)
+      if (!reqBody.password) {
+        reqBody.password = passwordUser
+      }
       const tokens = await createUserAndGenerateTokens(db, reqBody)
-      return NextResponse.json(tokens)
+      return NextResponse.json(
+        {
+          tokens,
+          reqBody,
+          message: 'User created successfully',
+          flag: 'USER_CREATED',
+        },
+        { status: 200 }
+      )
     }
 
     const tokens = generateTokens(user.name, reqBody.email)

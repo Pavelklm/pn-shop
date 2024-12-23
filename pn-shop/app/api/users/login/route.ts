@@ -25,5 +25,6 @@ export async function POST(req: Request) {
   }
 
   const tokens = generateTokens(user.name, reqBody.email)
+
   return NextResponse.json(tokens)
 }

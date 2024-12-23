@@ -43,19 +43,20 @@ const authOptions = {
       profile,
     }: {
       token: JWT
-      account?: Account | null
-      profile?: unknown | null
+      account?: Account | null // Убедитесь, что account может быть null
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      profile?: any
     }) {
       if (account && profile) {
         if (account.provider === 'google') {
           token.picture = profile.picture || null
         } else if (account.provider === 'discord') {
           const discordProfile = profile as {
-            image_url: string | null | undefined
+            image_url: string | null
             id: string
             avatar: string | null
           }
-          token.picture = discordProfile.image_url
+          token.picture = discordProfile.image_url || null
         } else if (account.provider === 'twitter') {
           token.picture = profile.profile_image_url || null
         } else if (account.provider === 'github') {
@@ -75,4 +76,5 @@ const authOptions = {
 
 const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }
+// eslint-disable-next-line prettier/prettier
 

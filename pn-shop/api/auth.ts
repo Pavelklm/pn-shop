@@ -1,6 +1,9 @@
+/* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { AllowedLangs } from '@/constants/lang'
 import { setIsAuth } from '@/context/auth'
 import { AppDispatch } from '@/context/store'
+import { getTimeOfDay } from '@/lib/helpers/getFullDateAndTime'
 import { onAuthSuccess } from '@/lib/utils/auth'
 import { handleJWTError } from '@/lib/utils/errors'
 import { ISignUpFx } from '@/types/IAuthPopup'
@@ -8,6 +11,7 @@ import { Tokens } from '@/types/ITokens'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import toast from 'react-hot-toast'
 import api from './apiInstance'
+import { sendEmailFx } from './sendEmail'
 
 export const singUpFx = createAsyncThunk(
   'auth/singUp',
@@ -60,24 +64,54 @@ export const singInFx = createAsyncThunk(
     isOAuth,
     image,
     name,
-  }: ISignUpFx & { dispatch: AppDispatch }) => {
+    currentLang,
+  }: ISignUpFx & {
+    dispatch: AppDispatch
+    currentLang: AllowedLangs
+  }) => {
     try {
+      const timeOfDay = getTimeOfDay(currentLang)
+
       if (isOAuth) {
         const { data } = await api.post('/api/users/oauth', {
           email,
           password,
           image,
           name,
+          dispatch,
         })
         if (data.error) {
           return Promise.reject(data.error)
         }
         const userData = data.user ? data.user : data
-        onAuthSuccess('Authorization successful', userData, dispatch)
+        await onAuthSuccess('Authorization successful', userData, dispatch)
+        if (data.flag === 'USER_CREATED') {
+          console.log(userData, currentLang)
+          dispatch(
+            sendEmailFx({
+              name: `${timeOfDay}: ${name}`,
+              email:
+                currentLang === 'ru'
+                  ? `Ваш логин для входа: ${email}`
+                  : `Your login for enter: ${email}`,
+              message:
+                currentLang === 'ru'
+                  ? `Ваш пароль для входа: ${userData.reqBody.password}`
+                  : `Your password for login: ${userData.reqBody.password}`,
+              postScriptum:
+                currentLang === 'ru'
+                  ? 'Вы всегда можете поменять свой пароль в личном кабинете, также вы можете зайти в свой аккаунт через социальные сети'
+                  : 'You can always change your password in your personal cabinet, you can also login to your account through social networks',
+            })
+          )
+        }
         return userData
       }
 
-      const { data } = await api.post('/api/users/login', { email, password })
+      const { data } = await api.post('/api/users/login', {
+        email,
+        password,
+      })
 
       if (data.warningMessage) {
         return Promise.reject(data.warningMessage)
@@ -106,7 +140,6 @@ export const loginCheckFx = createAsyncThunk(
         })
         return
       }
-
       dispatch(setIsAuth(true))
       return data.user
     } catch (error) {
