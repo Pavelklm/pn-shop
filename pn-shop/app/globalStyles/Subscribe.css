@@ -46,16 +46,16 @@
   position: relative;
   border-radius: 46px;
 }
-
+/*  */
 .subscribe__input {
   background: rgb(51, 51, 51);
-  border: 0;
+  border: 1px solid rgb(51, 51, 51);
   width: 460px;
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 24px;
   padding-right: 46px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   border-radius: 46px;
   color: #fff;
@@ -71,16 +71,16 @@
 
 .subscribe__btn {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 1px;
+  top: 1px;
   min-width: 185px;
-  padding: 14px 40px;
+  padding: 14px 0px;
   border-radius: 43px;
   color: #fff;
   background: var(--main-color);
   cursor: pointer;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .subscribe__btn:hover {
@@ -167,6 +167,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.input-error {
+  border: 1px solid red;
 }
 
 @media screen and (max-width: 1200px) {

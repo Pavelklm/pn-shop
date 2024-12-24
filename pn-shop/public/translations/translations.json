@@ -19,7 +19,8 @@
        "userNotFound": "Пользователь не найден",
        "wrongPassword": "Неверный логин или пароль",
        "register_first": "Сначала зарегистрируйтесь!",
-       "email_required": "Email обязателен!"
+       "email_required": "Email обязателен!",
+       "invalid_email": "Неправильный Email!"
       },
     "auth_popup": {
       "registration_title": "Регистрация",
@@ -110,7 +111,8 @@
         "userNotFound": "User not found",
         "wrongPassword": "Wrong login or password",
         "register_first": "Register first!",
-        "email_required": "Email is required!"
+        "email_required": "Email is required!",
+        "invalid_email": "Invalid email!"
       },
     "auth_popup": {
       "registration_title": "Registration",
