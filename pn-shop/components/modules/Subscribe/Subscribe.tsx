@@ -1,4 +1,5 @@
 import SubscribeSocialLinks from '@/components/elements/SubscribeSocial_media/SubscribeSocialLinks'
+import { emailBlocklist } from '@/constants/emailBlocklist'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { setSubscribed } from '@/context/subscribe'
 import { useLang } from '@/hooks/useLang'
@@ -6,6 +7,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { triggerSubscribe } from '@/lib/utils/common'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import disposableDomains from 'disposable-email-domains'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
@@ -61,6 +63,28 @@ const Subscribe = () => {
       toast.error(errorMessage)
       return false
     }
+
+    const domain = email.split('@')[1].toLowerCase()
+    const domain2 = email.split('@')[1].toLowerCase()
+    if (
+      disposableDomains.map((d) => d.toLowerCase()).includes(domain) ||
+      emailBlocklist.map((d) => d.toLowerCase()).includes(domain2)
+    ) {
+      const errorMessage = translations[lang].errors.disposable_email
+      toast.error(errorMessage)
+      return
+    }
+
+    const isDisposableEmail = (email: string) => {
+      const disposableRegex = /^(.*@)(.*\.co|.*\.xyz|.*\.info|.*\.io)$/
+      return disposableRegex.test(email)
+    }
+
+    if (isDisposableEmail(email)) {
+      toast.error(translations[lang].errors.disposable_email)
+      return
+    }
+
     setError('')
     return true
   }
@@ -70,14 +94,12 @@ const Subscribe = () => {
   ) => {
     event.preventDefault()
     setIsClicked(true)
-    console.log(isClicked)
     if (!validateEmail()) return
     triggerSubscribe(dispatch, email)
   }
 
   const emailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
-    console.log(email)
     if (isClicked) {
       setIsClicked(false)
     }
