@@ -75,7 +75,7 @@
 }
 
 .footer__links__list__title {
-  margin-bottom: 4px;
+  margin-bottom: 27px;
   margin-top: 0;
 }
 
@@ -114,9 +114,6 @@
   .footer__top {
     gap: 60px;
   }
-}
-
-@media screen and (max-width: 1024px) {
   .footer__top {
     flex-direction: column;
   }

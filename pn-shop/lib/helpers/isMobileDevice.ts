@@ -3,15 +3,10 @@
 import { headers } from 'next/headers'
 import { UAParser } from 'ua-parser-js'
 
-export const isMobileDevice = () => {
-  const { get } = headers()
-  const ua = get('user-agent')
+export const isMobileDevice = async () => {
+  const allHeaders = headers()
+  const ua = (await allHeaders).get('user-agent')
 
   const device = new UAParser(ua || '').getDevice()
-
-  if (device.type === 'mobile') return true
-
-  if (device.type === undefined) return false
-
-  return false
+  return device.type === 'mobile'
 }

@@ -1,5 +1,5 @@
 import SubscribeSocialLinks from '@/components/elements/SubscribeSocial_media/SubscribeSocialLinks'
-import { emailBlocklist } from '@/constants/emailBlocklist'
+import { emailwhitelist } from '@/constants/emailWhitelist'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { setSubscribed } from '@/context/subscribe'
 import { useLang } from '@/hooks/useLang'
@@ -7,7 +7,6 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { triggerSubscribe } from '@/lib/utils/common'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import disposableDomains from 'disposable-email-domains'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
@@ -65,24 +64,17 @@ const Subscribe = () => {
     }
 
     const domain = email.split('@')[1].toLowerCase()
-    const domain2 = email.split('@')[1].toLowerCase()
-    if (
-      disposableDomains.map((d) => d.toLowerCase()).includes(domain) ||
-      emailBlocklist.map((d) => d.toLowerCase()).includes(domain2)
-    ) {
-      const errorMessage = translations[lang].errors.disposable_email
+    const isWhitelisted = emailwhitelist
+      .map((d) => d.toLowerCase())
+      .includes(domain)
+
+    if (!isWhitelisted) {
+      const errorMessage =
+        translations[lang].errors.not_allowed_domain ||
+        'This email domain is not allowed'
+      setError(errorMessage)
       toast.error(errorMessage)
-      return
-    }
-
-    const isDisposableEmail = (email: string) => {
-      const disposableRegex = /^(.*@)(.*\.co|.*\.xyz|.*\.info|.*\.io)$/
-      return disposableRegex.test(email)
-    }
-
-    if (isDisposableEmail(email)) {
-      toast.error(translations[lang].errors.disposable_email)
-      return
+      return false
     }
 
     setError('')
