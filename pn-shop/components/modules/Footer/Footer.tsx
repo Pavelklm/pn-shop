@@ -10,12 +10,12 @@ import Subscribe from '../Subscribe/Subscribe'
 
 export const Footer = () => {
   const { lang, translations } = useLang()
-  const isMedia1024 = useMediaQuery(1024)
+  const isMedia1200 = useMediaQuery(1200)
   const isMedia860 = useMediaQuery(860)
 
   return (
     <>
-      {!isMedia1024 ? (
+      {!isMedia1200 ? (
         <>
           <Subscribe />
           <div className='footer'>
@@ -74,9 +74,6 @@ export const Footer = () => {
                 </div>
                 <div className='footer__about_media'>
                   <Footer__links />
-                  <p className='footer__about__description'>
-                    {translations[lang].footer.description}
-                  </p>
                 </div>
               </div>
               <FooterBottom />

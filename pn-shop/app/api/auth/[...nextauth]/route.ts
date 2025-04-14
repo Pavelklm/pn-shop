@@ -43,7 +43,7 @@ const authOptions = {
       profile,
     }: {
       token: JWT
-      account?: Account | null // Убедитесь, что account может быть null
+      account?: Account | null
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       profile?: any
     }) {
