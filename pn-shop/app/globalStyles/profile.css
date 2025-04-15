@@ -1,0 +1,56 @@
+.profile__navigation__list {
+  width: 300px;
+  border: 1.2px solid rgb(230, 230, 230);
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+}
+
+.profile__navigation__list__title {
+  padding: 24px 0 16px 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.profile__navigation__list_item {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0px 0px 0px 20px;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.profile__navigation__list_item_link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: rgb(102, 102, 102);
+  transition: color 0.3s ease;
+}
+
+.profile__navigation__list_item:hover {
+  box-shadow: inset 3px 0px 0px 0px rgb(32, 181, 38);
+  background: rgb(237, 242, 238);
+  cursor: pointer;
+}
+
+.profile__navigation__list_item.active {
+  box-shadow: inset 3px 0px 0px 0px rgb(3, 214, 28);
+  background: rgb(223, 233, 220);
+}
+
+.profile__navigation__list_item.active .profile__navigation__list_item_link {
+  color: #000;
+}
+
+.profile__navigation__list_item_icon {
+  margin-right: 10px;
+  fill: #cccccc;
+  transition: fill 0.3s ease;
+}
+
+.profile__navigation__list_item.active .profile__navigation__list_item_icon {
+  fill: #000;
+}
