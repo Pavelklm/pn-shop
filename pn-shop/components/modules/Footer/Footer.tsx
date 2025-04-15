@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
-import FooterAccordion from '@/components/elements/Footer/Footer__accordion'
-import FooterBottom from '@/components/elements/Footer/Footer__bottom'
-import Footer__links from '@/components/elements/Footer/Footer__links'
+import FooterAccordion from '@/components/elements/Footer/FooterAccordion'
+import FooterBottom from '@/components/elements/Footer/FooterBottom'
+import FooterLinks from '@/components/elements/Footer/FooterLinks'
 import Logo from '@/components/elements/Logo/Logo'
 import { useLang } from '@/hooks/useLang'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -42,7 +42,7 @@ export const Footer = () => {
                     </Link>
                   </div>
                 </div>
-                <Footer__links />
+                <FooterLinks />
               </div>
               <FooterBottom />
             </div>
@@ -73,7 +73,7 @@ export const Footer = () => {
                   </div>
                 </div>
                 <div className='footer__about_media'>
-                  <Footer__links />
+                  <FooterLinks />
                 </div>
               </div>
               <FooterBottom />

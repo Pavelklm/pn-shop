@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import AuthPopupLogin from './AuthPopupLogin'
-import AuthPopupRegistration from './AuthPopupRegistration'
+import AuthPopupLogin from '../../elements/AuthPopup/AuthPopupLogin'
+import AuthPopupRegistration from '../../elements/AuthPopup/AuthPopupRegistration'
 
 const AuthPopup = () => {
   const [isAuthSwitched, setIsAuthSwitched] = useState(false)

@@ -9,9 +9,10 @@ import './globalStyles/burger.css'
 import './globalStyles/footer.css'
 import './globalStyles/header-profile.css'
 import './globalStyles/header.css'
+import './globalStyles/profile.css'
 import './globalStyles/search.css'
 import './globalStyles/spinner.css'
-import './globalStyles/Subscribe.css'
+import './globalStyles/subscribe.css'
 import './globalStyles/top-board.css'
 
 export const metadata: Metadata = {

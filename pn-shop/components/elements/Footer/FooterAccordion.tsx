@@ -6,14 +6,14 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import Typography from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles'
 import React from 'react'
-import Footer__link_account from './Footer__link_account'
-import Footer__link_help from './Footer__link_help'
-import Footer__link_klm from './Footer__link_klm'
+import Footer__link_account from './FooterLinkAccount'
+import Footer__link_help from './FooterLinkHelp'
+import Footer__link_klm from './FooterLinkKlm'
 import {
   Footer__link__title_account,
   Footer__link__title_help,
   Footer__link__title_klm,
-} from './Footer__links__titles'
+} from './FooterLinksTitles'
 
 const useStyles = makeStyles(() => ({
   root: {
