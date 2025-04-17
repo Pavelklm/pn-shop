@@ -2,7 +2,8 @@
 
 import DashboardSvg from '@/components/elements/Profile__svg/Dashboard_svg'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 import Logout_svg from '../Profile__svg/Logout_svg'
 import OrderHistorySvg from '../Profile__svg/OrderHistory_svg'
 import Settings_svg from '../Profile__svg/Settings_svg'
@@ -11,10 +12,17 @@ import WishListSvg from '../Profile__svg/WishList_svg'
 
 export default function ProfileNavigation() {
   const pathname = usePathname()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (pathname === '/Profile') {
+      router.replace('/Profile/Dashboard')
+    }
+  }, [pathname, router])
 
   return (
     <div className='profile__navigation'>
-      <div className='container profile__navigation__container'>
+      <div className='profile__navigation__container'>
         <nav className='profile__navigation__list'>
           <div className='profile__navigation__list__title'>Navigation</div>
           <ul className='profile__navigation__list__inner list-reset'>

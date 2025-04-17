@@ -6,7 +6,7 @@ export default function ProfileLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className='profile-page'>
+    <div className='profile-page container'>
       <aside>
         <ProfileNavigation />
       </aside>
