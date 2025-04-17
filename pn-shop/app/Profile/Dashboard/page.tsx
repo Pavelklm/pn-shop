@@ -1,3 +1,10 @@
 export default function Dashboard() {
-  return <div>Dashboard</div>
+  console.log('Dashboard')
+
+  return (
+    <>
+      <div>Dashboard</div>
+      <div>Dashboard</div>
+    </>
+  )
 }
