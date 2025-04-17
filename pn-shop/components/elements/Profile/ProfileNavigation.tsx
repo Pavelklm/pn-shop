@@ -3,6 +3,11 @@
 import DashboardSvg from '@/components/elements/Profile__svg/Dashboard_svg'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Logout_svg from '../Profile__svg/Logout_svg'
+import OrderHistorySvg from '../Profile__svg/OrderHistory_svg'
+import Settings_svg from '../Profile__svg/Settings_svg'
+import ShoppingCartSvg from '../Profile__svg/ShoppingCart'
+import WishListSvg from '../Profile__svg/WishList_svg'
 
 export default function ProfileNavigation() {
   const pathname = usePathname()
@@ -33,6 +38,7 @@ export default function ProfileNavigation() {
                 pathname === '/Profile/Order_History' ? 'active' : ''
               }`}
             >
+              <OrderHistorySvg className='profile__navigation__list_item_icon' />
               <Link
                 className='profile__navigation__list_item_link link-reset'
                 href='/Profile/Order_History'
@@ -45,6 +51,7 @@ export default function ProfileNavigation() {
                 pathname === '/Profile/Wishlist' ? 'active' : ''
               }`}
             >
+              <WishListSvg className='profile__navigation__list_item_icon_2' />
               <Link
                 className='profile__navigation__list_item_link link-reset'
                 href='/Profile/Wishlist'
@@ -57,6 +64,7 @@ export default function ProfileNavigation() {
                 pathname === '/Profile/Shopping_Cart' ? 'active' : ''
               }`}
             >
+              <ShoppingCartSvg className='profile__navigation__list_item_icon_2' />
               <Link
                 className='profile__navigation__list_item_link link-reset'
                 href='/Profile/Shopping_Cart'
@@ -69,6 +77,7 @@ export default function ProfileNavigation() {
                 pathname === '/Profile/Settings' ? 'active' : ''
               }`}
             >
+              <Settings_svg className='profile__navigation__list_item_icon' />
               <Link
                 className='profile__navigation__list_item_link link-reset'
                 href='/Profile/Settings'
@@ -79,6 +88,7 @@ export default function ProfileNavigation() {
             <li
               className={`profile__navigation__list_item ${pathname === '/Profile/log-out' ? 'active' : ''}`}
             >
+              <Logout_svg className='profile__navigation__list_item_icon' />
               <Link
                 className='profile__navigation__list_item_link link-reset'
                 href='/Profile/log-out'

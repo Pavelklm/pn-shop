@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   color: rgb(102, 102, 102);
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .profile__navigation__list_item:hover {
@@ -48,9 +48,19 @@
 .profile__navigation__list_item_icon {
   margin-right: 10px;
   fill: #cccccc;
-  transition: fill 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.profile__navigation__list_item_icon_2 {
+  margin-right: 10px;
+  stroke: #cccccc;
+  transition: all 0.3s ease;
 }
 
 .profile__navigation__list_item.active .profile__navigation__list_item_icon {
   fill: #000;
+}
+
+.profile__navigation__list_item.active .profile__navigation__list_item_icon_2 {
+  stroke: #000;
 }
