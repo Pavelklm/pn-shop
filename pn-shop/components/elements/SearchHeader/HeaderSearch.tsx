@@ -52,7 +52,7 @@ const HeaderSearch = ({
               className='btn-reset align-items-center header__buttons__item__search'
               onClick={handleToggleSearch}
             >
-              <HeaderSvgSearch className='header__buttons__item__svg' />
+              <HeaderSvgSearch className='header__buttons__item__svg-media' />
             </button>
           </div>
         )}

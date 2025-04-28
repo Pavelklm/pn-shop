@@ -63,6 +63,7 @@
   right: 145px;
   pointer-events: auto;
   transition: all 0.3s ease-in-out;
+  fill: #fff;
 }
 
 .search-close {
