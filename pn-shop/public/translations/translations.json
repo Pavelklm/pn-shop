@@ -1,6 +1,6 @@
 {
   "ru": {
-    "header":{
+    "header": {
       "Home": "Главная",
       "Shop": "Магазин",
       "Contacts": "Контакты",
@@ -10,18 +10,18 @@
       "profile": "Профиль",
       "search_infos": "Поиск..."
     },
-    "burger" : {
+    "burger": {
       "wishList": "Избранное",
       "ShoppingCart": "Корзина"
     },
-    "errors" : {
+    "errors": {
       "userAlreadyExists": "Пользователь с таким Email уже существует",
-       "userNotFound": "Пользователь не найден",
-       "wrongPassword": "Неверный логин или пароль",
-       "register_first": "Сначала зарегистрируйтесь!",
-       "email_required": "Email обязателен!",
-       "invalid_email": "Неправильный Email!"
-      },
+      "userNotFound": "Пользователь не найден",
+      "wrongPassword": "Неверный логин или пароль",
+      "register_first": "Сначала зарегистрируйтесь!",
+      "email_required": "Email обязателен!",
+      "invalid_email": "Неправильный Email!"
+    },
     "auth_popup": {
       "registration_title": "Регистрация",
       "registration_text": "Создать",
@@ -47,7 +47,7 @@
       "min_4": "Минимум 4 символа!",
       "max_20": "Не более 20 символов!"
     },
-    "top_board" : {
+    "top_board": {
       "welcome": "Добро пожаловать в KLM-Shop",
       "title1": "Свежие и полезные",
       "title2": "Органические продукты",
@@ -56,43 +56,62 @@
       "free_delivery": "Бесплатная доставка на любые товары. Мы доставляем — вы наслаждаетесь.",
       "buy_now": "Купить сейчас"
     },
-    "advantage" : {
-      "title1" : "Бесплатная доставка",
-      "title2" : "Лучшая поддержка 24/7",
-      "title3" : "100% Безопасная оплата",
-      "title4" : "Гарантия 30 дней",
-      "description1" : "Бесплатная доставка с учётом скидки",
-      "description2" : "Быстрая поддержка 24/7",
-      "description3" : "Гарантия безопасности ваших денег",
-      "description4" : "Возврат денег в течении 30 дней"
+    "advantage": {
+      "title1": "Бесплатная доставка",
+      "title2": "Лучшая поддержка 24/7",
+      "title3": "100% Безопасная оплата",
+      "title4": "Гарантия 30 дней",
+      "description1": "Бесплатная доставка с учётом скидки",
+      "description2": "Быстрая поддержка 24/7",
+      "description3": "Гарантия безопасности ваших денег",
+      "description4": "Возврат денег в течении 30 дней"
     },
-    "subscribe" : {
-      "title" : "Подпишитесь на рассылку",
-      "placeholder" : "Ваш Email",
-      "button" : "Подписаться",
-      "description" : "И узнайте о новых поступлениях",
-      "success1" : "Спасибо за подписку!",
-      "success2" : "Теперь вы будете в курсе новых поступлений"
+    "subscribe": {
+      "title": "Подпишитесь на рассылку",
+      "placeholder": "Ваш Email",
+      "button": "Подписаться",
+      "description": "И узнайте о новых поступлениях",
+      "success1": "Спасибо за подписку!",
+      "success2": "Теперь вы будете в курсе новых поступлений"
     },
-    "footer" : {
-        "description": "«KLM» — это компания, занимающаяся производством и продажей натуральных продуктов, выращенных с заботой о здоровье и экологии. Мы гарантируем высокое качество и свежесть, отбирая продукцию у проверенных фермеров и минимизируя обработку, чтобы сохранить максимальную пользу и вкус. Наша миссия — сделать доступной качественную и экологически чистую еду для всех, кто стремится к здоровому образу жизни и заботится о будущем планеты.",
-        "title": "Мой аккаунт",
-        "profile": "Профиль",
-        "order_history": "История заказов",
-        "shopping_cart": "Корзина",
-        "wishlist": "Список желаний",
-        "helps": "Помощь",
-        "faqs": "FAQs",
-        "terms_condition": "Условия использования",
-        "privacy_policy": "Политика конфиденциальности",
-        "about": "О нас",
-        "shop": "Магазин"
+    "footer": {
+      "description": "«KLM» — это компания, занимающаяся производством и продажей натуральных продуктов, выращенных с заботой о здоровье и экологии. Мы гарантируем высокое качество и свежесть, отбирая продукцию у проверенных фермеров и минимизируя обработку, чтобы сохранить максимальную пользу и вкус. Наша миссия — сделать доступной качественную и экологически чистую еду для всех, кто стремится к здоровому образу жизни и заботится о будущем планеты.",
+      "title": "Мой аккаунт",
+      "profile": "Профиль",
+      "order_history": "История заказов",
+      "shopping_cart": "Корзина",
+      "wishlist": "Список желаний",
+      "helps": "Помощь",
+      "faqs": "FAQs",
+      "terms_condition": "Условия использования",
+      "privacy_policy": "Политика конфиденциальности",
+      "about": "О нас",
+      "shop": "Магазин"
+    },
+    "ProfileNavigation": {
+      "dashboard": "Панель управления",
+      "navigation": "Навигация",
+      "order_history": "История заказов",
+      "wishlist": "Список желаний",
+      "shopping_cart": "Корзина",
+      "settings": "Настройки",
+      "logout": "Выход"
+    },
+    "ProfileDashboard": {
+      "edit__profile": "Редактировать профиль",
+      "billing_address": "Адрес доставки",
+      "edit__billing_address": "Редактировать адрес доставки",
+      "order__history_title": "История заказов",
+      "view__all": "Посмотреть все",
+      "order__id": "ID заказа",
+      "date": "Дата",
+      "total": "Итого",
+      "status": "Статус",
+      "empty__order__history": "История заказов пуста"
     }
-    
-
-    },
+  },
   "en": {
-    "header":{
+    "header": {
       "Home": "Home",
       "Shop": "Shop",
       "Contacts": "Contacts",
@@ -102,18 +121,18 @@
       "profile": "Profile",
       "search_infos": "Search..."
     },
-    "burger" : {
+    "burger": {
       "wishList": "Wish List",
       "ShoppingCart": "Shopping Cart"
     },
     "errors": {
-       "userAlreadyExists": "User with this Email already exists",
-        "userNotFound": "User not found",
-        "wrongPassword": "Wrong login or password",
-        "register_first": "Register first!",
-        "email_required": "Email is required!",
-        "invalid_email": "Invalid email!"
-      },
+      "userAlreadyExists": "User with this Email already exists",
+      "userNotFound": "User not found",
+      "wrongPassword": "Wrong login or password",
+      "register_first": "Register first!",
+      "email_required": "Email is required!",
+      "invalid_email": "Invalid email!"
+    },
     "auth_popup": {
       "registration_title": "Registration",
       "registration_text": "Create",
@@ -128,7 +147,7 @@
       "password": "Password"
     },
     "validation": {
-      "invalid_value": "Invalid value!", 
+      "invalid_value": "Invalid value!",
       "requiredName": "Enter name!",
       "invalid_phone": "Invalid phone!",
       "required_email": "Enter email!",
@@ -141,24 +160,24 @@
     },
     "top_board": {
       "welcome": "Welcome to KLM-Shop",
-      "title1" : "Fresh & Healthy",
-      "title2" : "Organic Products",
-      "sale1" : "Sale up to",
-      "sale2" : "30% OFF",
-      "free_delivery" : "Free shipping on all your order. we deliver, you enjoy",
-      "buy_now" : "Shop Now"
+      "title1": "Fresh & Healthy",
+      "title2": "Organic Products",
+      "sale1": "Sale up to",
+      "sale2": "30% OFF",
+      "free_delivery": "Free shipping on all your order. we deliver, you enjoy",
+      "buy_now": "Shop Now"
     },
-    "advantage" : {
-      "title1" : "Free Shipping",
-      "title2" : "Great Support 24/7",
-      "title3" : "100% Sucure Payment",
-      "title4" : "Money-Back Guarantee",
-      "description1" : "Free shipping with discount",
-      "description2" : "Instant access to Contact",
-      "description3" : "We ensure your money is save",
-      "description4" : "30 days money-back"
+    "advantage": {
+      "title1": "Free Shipping",
+      "title2": "Great Support 24/7",
+      "title3": "100% Sucure Payment",
+      "title4": "Money-Back Guarantee",
+      "description1": "Free shipping with discount",
+      "description2": "Instant access to Contact",
+      "description3": "We ensure your money is save",
+      "description4": "30 days money-back"
     },
-    "subscribe" : {
+    "subscribe": {
       "title": "Subscribe to our newsletter",
       "placeholder": "Enter your email",
       "button": "Subscribe",
@@ -166,7 +185,7 @@
       "success1": "Thank you for subscribing!",
       "success2": "Now you will be notified about new products"
     },
-    "footer" : {
+    "footer": {
       "description": "KLM is dedicated to producing and offering natural, eco-friendly products grown with care for health and the environment. We guarantee premium quality and freshness by sourcing from trusted farmers and minimizing processing to retain maximum nutritional value and flavor. Our mission is to make high-quality, sustainable food accessible to everyone who values healthy living and cares about the planet's future.",
       "title": "My Account",
       "profile": "Profile",
@@ -179,10 +198,27 @@
       "privacy_policy": "Privacy Policy",
       "about": "About",
       "shop": "Shop"
+    },
+    "ProfileNavigation": {
+      "dashboard": "Dashboard",
+      "navigation": "Navigation",
+      "order_history": "Order history",
+      "wishlist": "Wishlist",
+      "shopping_cart": "Shopping cart",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "ProfileDashboard": {
+      "edit__profile": "Edit profile",
+      "billing_address": "Billing address",
+      "edit__billing_address": "Edit billing address",
+      "order__history_title": "Order history",
+      "view__all": "View all",
+      "order__id": "Order ID",
+      "date": "Date",
+      "total": "Total",
+      "status": "Status",
+      "empty__order__history": "Order history is empty"
     }
   }
-  
-  }
-
-
-
+}

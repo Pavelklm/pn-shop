@@ -46,6 +46,7 @@ main {
   cursor: pointer;
   background-color: transparent;
   border: none;
+  font-family: 'Rubik';
 }
 
 .list-reset {

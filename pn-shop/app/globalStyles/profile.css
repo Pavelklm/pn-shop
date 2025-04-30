@@ -39,6 +39,7 @@
   transition: all 0.3s ease;
   z-index: 10;
   padding-left: 54px;
+  font-size: 16px;
 }
 
 .profile__navigation__list_item:hover {
@@ -80,4 +81,174 @@
 
 .profile__navigation__list_item.active .profile__navigation__list_item_icon_2 {
   stroke: #000;
+}
+
+/* dashboardProfile */
+.ProfileDashboard {
+}
+
+.ProfileDashboard__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ProfileDashboard__top_inner {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.ProfileDashboard__profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 32px 0 32px 0;
+  flex-direction: column;
+  width: 522px;
+  height: 280px;
+  border: 1.2px solid rgb(230, 230, 230);
+  border-radius: 8px;
+}
+
+.ProfileDashboard__image__btn {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 8px;
+}
+
+.ProfileDashboard__name {
+}
+
+.ProfileDashboard__name__title {
+  margin-bottom: 2px;
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.ProfileDashboard__name__role {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(128, 128, 128);
+}
+
+.ProfileDashboard__edit {
+}
+
+.ProfileDashboard__edit__btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(0, 179, 7);
+}
+
+.ProfileDashboard__billing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 410px;
+  height: 280px;
+  border: 1.2px solid rgb(230, 230, 230);
+  border-radius: 8px;
+  padding: 32px 0 32px 32px;
+}
+
+.ProfileDashboard__billing__title {
+  color: rgb(153, 153, 153);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.ProfileDashboard__billing__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ProfileDashboard__billing__name {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(26, 26, 26);
+  text-transform: capitalize;
+}
+.ProfileDashboard__billing__address {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(102, 102, 102);
+}
+
+.ProfileDashboard__billing__email {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(26, 26, 26);
+}
+
+.ProfileDashboard__billing__phone {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.ProfileDashboard__billing__edit {
+}
+
+.ProfileDashboard__billing__edit__btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(0, 179, 7);
+}
+
+.ProfileDashboard__orderhistory {
+  border: 1.2px solid rgb(230, 230, 230);
+  border-radius: 8px;
+  padding: 16px 0 24px 0;
+  height: 400px;
+}
+
+.ProfileDashboard__orderhistory__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ProfileDashboard__orderhistory__title {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(26, 26, 26);
+  padding-left: 24px;
+}
+
+.ProfileDashboard__orderhistory__viewall {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(0, 179, 7);
+  padding-right: 24px;
+}
+
+.ProfileDashboard__orderhistory__columnname {
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+  margin-bottom: 12px;
+  background: rgb(242, 242, 242);
+  padding: 12px 0 12px 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(77, 77, 77);
+  text-transform: uppercase;
+}
+
+.ProfileDashboard__orderhistory__columnname__item {
+}
+
+.ProfileDashboard__orderhistory__items {
+  padding: 12px 24px 0 24px;
+}
+
+.ProfileDashboard__orderhistory__items__empty {
 }

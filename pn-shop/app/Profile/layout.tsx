@@ -1,4 +1,4 @@
-import ProfileNavigation from '@/components/elements/Profile/ProfileNavigation'
+import ProfileNavigation from '@/components/modules/Profile/ProfileNavigation'
 
 export default function ProfileLayout({
   children,
