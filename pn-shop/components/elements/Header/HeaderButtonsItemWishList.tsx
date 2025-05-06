@@ -33,7 +33,7 @@ const HeaderButtonsItemWishList: React.FC<Props> = ({
       {user ? (
         <Link
           className={`btn-reset align-items-center ${className}__buttons__item__wish_list`}
-          href={'/Wish_List'}
+          href={'/Profile/Wish-List'}
         >
           <HeaderSvgWishList
             className={`align-items-center ${className}__buttons__item__svg`}

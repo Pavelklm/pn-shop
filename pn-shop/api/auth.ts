@@ -85,8 +85,8 @@ export const singInFx = createAsyncThunk(
         }
         const userData = data.user ? data.user : data
         await onAuthSuccess('Authorization successful', userData, dispatch)
+
         if (data.flag === 'USER_CREATED') {
-          console.log(userData, currentLang)
           dispatch(
             sendEmailFx({
               name: `${timeOfDay}: ${name}`,

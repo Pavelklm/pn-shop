@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { setSubscribed } from '@/context/subscribe'
 import { useLang } from '@/hooks/useLang'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { handleInputBlur, handleInputFocus } from '@/lib/helpers/InputFocus'
 import { triggerSubscribe } from '@/lib/utils/common'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,24 +29,6 @@ const Subscribe = () => {
       dispatch(setSubscribed())
     }
   }, [dispatch, user.subscribed])
-
-  const handleInputFocus = (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    if (!e.target.value) {
-      e.target.classList.remove('placeholder')
-    }
-  }
-  const handleInputBlur = (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    if (e.target.value) {
-      e.target.classList.remove('placeholder')
-    }
-    if (!e.target.value) {
-      e.target.classList.add('placeholder')
-    }
-  }
 
   const validateEmail = () => {
     if (!email) {

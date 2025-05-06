@@ -1,7 +1,6 @@
 import { withClickOutside } from '@/components/hocs/withClickOutside'
 import { useLang } from '@/hooks/useLang'
 import { useUserLogout } from '@/hooks/useLogout'
-import { useUser } from '@/hooks/useUser'
 import { useUserAvatar } from '@/hooks/useUserAvatar'
 import { IWrappedComponentProps } from '@/types/IHocs'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -15,7 +14,6 @@ const HeaderProfile = forwardRef<HTMLDivElement, IWrappedComponentProps>(
     const handleLogout = useUserLogout()
     const { src, alt } = useUserAvatar()
     const { lang, translations } = useLang()
-    const user = useUser()
 
     return (
       <div className='header-profile__popup' ref={ref}>
@@ -48,7 +46,6 @@ const HeaderProfile = forwardRef<HTMLDivElement, IWrappedComponentProps>(
                   {translations[lang].header.profile}
                 </Link>
               </li>
-              <li>{user.user?.email}</li>
               <li className='header-profile__item'>
                 <button
                   className='btn-reset header-profile__item__btn'

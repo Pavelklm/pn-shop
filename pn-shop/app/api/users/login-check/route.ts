@@ -30,6 +30,8 @@ export async function GET(req: Request) {
       user: {
         email: user.email,
         name: user.name,
+        lastName: user.lastName,
+        phone: user.phone,
         _id: user?._id,
         image: user?.image,
         role: user?.role,

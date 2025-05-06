@@ -4,6 +4,7 @@ import { useLang } from '@/hooks/useLang'
 import { useUser } from '@/hooks/useUser'
 import { useUserAvatar } from '@/hooks/useUserAvatar'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const ProfileDashboard = () => {
   const user = useUser()
@@ -15,7 +16,10 @@ const ProfileDashboard = () => {
       <div className='ProfileDashboard__container'>
         <div className='ProfileDashboard__top_inner'>
           <div className='ProfileDashboard__profile'>
-            <button className='btn-reset ProfileDashboard__image__btn'>
+            <Link
+              href={'/Profile/Settings'}
+              className='btn-reset ProfileDashboard__image__btn'
+            >
               <Image
                 src={src ? src : '/img/profile.png'}
                 alt={alt ? alt : 'profile'}
@@ -24,7 +28,7 @@ const ProfileDashboard = () => {
                 draggable={false}
                 style={{ objectFit: 'cover', borderRadius: '50%' }}
               />
-            </button>
+            </Link>
             <div className='ProfileDashboard__name'>
               <h3 className='ProfileDashboard__name__title'>
                 {user?.user?.name}
@@ -32,9 +36,12 @@ const ProfileDashboard = () => {
               <p className='ProfileDashboard__name__role'>{user?.user?.role}</p>
             </div>
             <div className='ProfileDashboard__edit'>
-              <button className='btn-reset ProfileDashboard__edit__btn'>
+              <Link
+                href={'/Profile/Settings'}
+                className='ProfileDashboard__edit__btn'
+              >
                 {translations[lang].ProfileDashboard.edit__profile}
-              </button>
+              </Link>
             </div>
           </div>
           <div className='ProfileDashboard__billing'>
@@ -56,9 +63,12 @@ const ProfileDashboard = () => {
               </div>
             </div>
             <div className='ProfileDashboard__billing__edit'>
-              <button className='btn-reset ProfileDashboard__billing__edit__btn'>
+              <Link
+                href={'/Profile/Settings'}
+                className='ProfileDashboard__billing__edit__btn'
+              >
                 {translations[lang].ProfileDashboard.billing_address}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

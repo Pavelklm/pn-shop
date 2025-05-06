@@ -35,7 +35,7 @@ const HeaderButtonsItemShoppingCart: React.FC<Props> = ({
       {user ? (
         <Link
           className={`btn-reset align-items-center ${className}__buttons__item__shopping_cart`}
-          href={'/Shopping_Cart'}
+          href={'/Profile/Shopping-Cart'}
         >
           <HeaderSvgShopingCart
             className={`align-items-center ${className}__buttons__item__svg`}

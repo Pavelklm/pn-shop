@@ -81,6 +81,7 @@
   cursor: pointer;
   font-weight: 600;
   font-size: 15px;
+  transition: all 0.5s ease;
 }
 
 .subscribe__btn:hover {

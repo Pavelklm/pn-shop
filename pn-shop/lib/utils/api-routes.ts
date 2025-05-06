@@ -46,12 +46,14 @@ export const createUserAndGenerateTokens = async (db: Db, reqBody: IUser) => {
 
   await db.collection('users').insertOne({
     name: reqBody.name || 'New User',
+    lastName: reqBody.lastName || '',
     email: reqBody.email,
+    phone: reqBody.phone || '',
     password: hash,
     image: reqBody.image || '',
     role: 'user',
-    createdAt: getFullDateAndTime,
-    updatedAt: getFullDateAndTime,
+    createdAt: getFullDateAndTime(),
+    updatedAt: getFullDateAndTime(),
     subscribed: false,
     subEmail: '',
   })
@@ -130,4 +132,37 @@ export const updateSubscribeUser = async (
       { email },
       { $set: { subscribed: true, subEmail: subEmail, updatedAt: updatedAt } }
     )
+}
+
+export const updateUser = async (
+  db: Db,
+  email: string,
+  name?: string,
+  lastName?: string,
+  NewEmail?: string,
+  phone?: string,
+  updatedAt = getFullDateAndTime()
+) => {
+  try {
+    const updateFields: Record<string, string> = {}
+
+    if (name) updateFields.name = name
+    if (lastName) updateFields.lastName = lastName
+    if (NewEmail) updateFields.email = NewEmail
+    if (phone) updateFields.phone = phone
+    if (updatedAt) updateFields.updatedAt = updatedAt
+
+    if (Object.keys(updateFields).length === 0) {
+      throw new Error('Нет данных для обновления')
+    }
+
+    const result = await db
+      .collection('users')
+      .updateOne({ email }, { $set: updateFields })
+
+    return result
+  } catch (error) {
+    console.error('Ошибка при обновлении пользователя:', error)
+    throw error
+  }
 }

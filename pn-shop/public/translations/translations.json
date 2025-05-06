@@ -18,9 +18,12 @@
       "userAlreadyExists": "Пользователь с таким Email уже существует",
       "userNotFound": "Пользователь не найден",
       "wrongPassword": "Неверный логин или пароль",
-      "register_first": "Сначала зарегистрируйтесь!",
+      "register_first": "Сначала войдите в аккаунт!",
       "email_required": "Email обязателен!",
-      "invalid_email": "Неправильный Email!"
+      "invalid_email": "Неправильный Email!",
+      "invalid_name_profileForm": "Имя должно содержать только буквы (2–30 символов)",
+      "invalid_surname_profileForm": "Фамилия должна содержать только буквы (2–30 символов)",
+      "invalid_phone_profileForm": "Неправильный телефон!"
     },
     "auth_popup": {
       "registration_title": "Регистрация",
@@ -107,7 +110,16 @@
       "date": "Дата",
       "total": "Итого",
       "status": "Статус",
-      "empty__order__history": "История заказов пуста"
+      "empty__order__history": "История заказов пуста..."
+    },
+    "placeholder": {
+      "name": "Имя",
+      "surname": "Фамилия",
+      "email": "email@example.com",
+      "password": "Пароль",
+      "confirm_password": "Подтвердите пароль",
+      "new_password": "Новый пароль",
+      "confirm_new_password": "Подтвердите новый пароль"
     }
   },
   "en": {
@@ -129,9 +141,12 @@
       "userAlreadyExists": "User with this Email already exists",
       "userNotFound": "User not found",
       "wrongPassword": "Wrong login or password",
-      "register_first": "Register first!",
+      "register_first": "Please log in first!",
       "email_required": "Email is required!",
-      "invalid_email": "Invalid email!"
+      "invalid_email": "Invalid email!",
+      "invalid_name_profileForm": "Name  should contain only letters (2-30 characters)",
+      "invalid_surname_profileForm": "Surname should contain only letters (2-30 characters)",
+      "invalid_phone_profileForm": "Invalid phone!"
     },
     "auth_popup": {
       "registration_title": "Registration",
@@ -218,7 +233,16 @@
       "date": "Date",
       "total": "Total",
       "status": "Status",
-      "empty__order__history": "Order history is empty"
+      "empty__order__history": "Order history is empty..."
+    },
+    "placeholder": {
+      "name": "Name",
+      "surname": "Last Name",
+      "email": "email@example.com",
+      "password": "Password",
+      "confirm_password": "Confirm password",
+      "new_password": "New password",
+      "confirm_new_password": "Confirm new password"
     }
   }
 }

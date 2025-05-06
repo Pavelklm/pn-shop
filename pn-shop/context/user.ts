@@ -7,7 +7,9 @@ const userSlice = createSlice({
   initialState: {
     user: {
       name: '',
+      lastName: '',
       email: '',
+      phone: '',
       image: '',
       _id: '',
       role: '',
@@ -28,7 +30,9 @@ const userSlice = createSlice({
     builder
       .addCase(loginCheckFx.fulfilled, (state, { payload }) => {
         state.user.name = payload?.name
+        state.user.lastName = payload?.lastName
         state.user.email = payload?.email
+        state.user.phone = payload?.phone
         state.user._id = payload?._id
         state.user.image = payload?.image
         state.user.role = payload?.role

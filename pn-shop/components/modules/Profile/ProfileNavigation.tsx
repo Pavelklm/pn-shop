@@ -62,26 +62,26 @@ export default function ProfileNavigation() {
             </li>
             <li
               className={`profile__navigation__list_item  ${
-                pathname === '/Profile/Wishlist' ? 'active' : ''
+                pathname === '/Profile/Wish-List' ? 'active' : ''
               }`}
             >
               <WishListSvg className='profile__navigation__list_item_icon_2' />
               <Link
                 className='profile__navigation__list_item_link link-reset'
-                href='/Profile/Wishlist'
+                href='/Profile/Wish-List'
               >
                 {translations[lang].ProfileNavigation.wishlist}
               </Link>
             </li>
             <li
               className={`profile__navigation__list_item  ${
-                pathname === '/Profile/Shopping_Cart' ? 'active' : ''
+                pathname === '/Profile/Shopping-Cart' ? 'active' : ''
               }`}
             >
               <ShoppingCartSvg className='profile__navigation__list_item_icon_2' />
               <Link
                 className='profile__navigation__list_item_link link-reset'
-                href='/Profile/Shopping_Cart'
+                href='/Profile/Shopping-Cart'
               >
                 {translations[lang].ProfileNavigation.shopping_cart}
               </Link>

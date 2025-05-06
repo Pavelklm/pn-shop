@@ -1,5 +1,6 @@
 import { useLang } from '@/hooks/useLang'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { handleInputBlur, handleInputFocus } from '@/lib/helpers/InputFocus'
 import HeaderSvgSearch from '../Header__svg/Header__svg__search'
 const HeaderSearch = ({
   className,
@@ -12,25 +13,6 @@ const HeaderSearch = ({
 }) => {
   const { lang, translations } = useLang()
   const isMedia1000 = useMediaQuery(1000)
-
-  const handleInputFocus = (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-  ) => {
-    if (!e.target.value) {
-      e.target.classList.remove('placeholder')
-    }
-  }
-
-  const handleInputBlur = (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-  ) => {
-    if (e.target.value) {
-      e.target.classList.remove('placeholder')
-    }
-    if (!e.target.value) {
-      e.target.classList.add('placeholder')
-    }
-  }
 
   return (
     <li
