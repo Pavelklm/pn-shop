@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-import api from './apiInstance.ts'
+import api from './apiInstance'
 
 export const sendEmailFx = createAsyncThunk(
   'email/send',
