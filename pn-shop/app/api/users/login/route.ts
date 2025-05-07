@@ -26,5 +26,15 @@ export async function POST(req: Request) {
 
   const tokens = generateTokens(user.name, reqBody.email)
 
-  return NextResponse.json(tokens)
+  const response = NextResponse.json(tokens)
+
+  response.cookies.set('tokenJWT', tokens.accessToken, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    path: '/',
+    maxAge: 60 * 60 * 24,
+  })
+
+  return response
 }

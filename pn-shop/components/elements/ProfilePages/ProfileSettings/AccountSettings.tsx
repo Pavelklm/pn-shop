@@ -15,14 +15,10 @@ const ProfileSettings = () => {
   const { formData, errors, handleChange, handleSubmit } = useFormHandlers(user)
   const [isDisabled, setIsDisabled] = useState(true)
 
-  console.log(isDisabled)
-
   useEffect(() => {
     const hasErrors = Object.values(errors).some(Boolean)
     const isFormIncomplete =
       !formData.name && !formData.lastName && !formData.email && !formData.phone
-
-    console.log(hasErrors, isFormIncomplete)
 
     if (!hasErrors && !isFormIncomplete) {
       setIsDisabled(false)
