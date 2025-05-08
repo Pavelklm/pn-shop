@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import api from './apiInstance'
+import api from '../api/apiInstance'
 
 export const isMobileFx = createAsyncThunk('device/isMobile', async () => {
   const { data } = await api.post('/api/isMobile')
