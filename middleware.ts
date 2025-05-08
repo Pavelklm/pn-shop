@@ -16,6 +16,7 @@ const verifyCustomToken = async (token: string | undefined) => {
     return null
   }
 }
+console.log(process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET)
 
 export async function middleware(req: NextRequest) {
   const isProtected = protectedPaths.some((path) =>
