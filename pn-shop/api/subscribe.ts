@@ -3,7 +3,7 @@ import { setSubscribed } from '@/context/subscribe'
 import { Tokens } from '@/types/ITokens'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import toast from 'react-hot-toast'
-import api from './apiInstance.js'
+import api from '../lib/utils/apiInstance'
 
 export const subscribeFx = createAsyncThunk<
   Tokens,

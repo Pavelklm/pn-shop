@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "api/apiInstance.js"  ],
+, "lib/utils/apiInstance.js"  ],
   "exclude": [
     "node_modules"
   ]

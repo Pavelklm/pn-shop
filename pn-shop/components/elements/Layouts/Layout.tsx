@@ -1,10 +1,10 @@
-import { isMobileFx } from '@/api/isMobile'
 import { Footer } from '@/components/modules/Footer/Footer'
 import { Header } from '@/components/modules/Header/Header'
 import { closeBurger } from '@/context/burger'
 import { useAppDispatch, useAppSelector } from '@/context/hooks'
 import { setMobile } from '@/context/mobile'
 import { closePopup } from '@/lib/utils/auth'
+import { isMobileFx } from '@/lib/utils/isMobile'
 import React, { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 
