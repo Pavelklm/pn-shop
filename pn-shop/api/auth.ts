@@ -10,7 +10,7 @@ import { ISignUpFx } from '@/types/IAuthPopup'
 import { Tokens } from '@/types/ITokens'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import toast from 'react-hot-toast'
-import api from './apiInstance'
+import api from './apiInstance.js'
 import { sendEmailFx } from './sendEmail'
 
 export const singUpFx = createAsyncThunk(
