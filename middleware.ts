@@ -27,6 +27,8 @@ export async function middleware(req: NextRequest) {
     secret: process.env.NEXTAUTH_SECRET,
   })
 
+  console.log(tokenNextAuth)
+
   const tokenJWT = req.cookies.get('tokenJWT')?.value
   const customPayload = await verifyCustomToken(tokenJWT)
 
