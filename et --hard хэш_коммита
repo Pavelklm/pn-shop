@@ -1,0 +1,301 @@
+[33mcommit 0e8c55b58563907e2dc662e61b7d23bfe805bfbf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Wed Apr 30 15:16:53 2025 +0300
+
+    add content to profile/dashboard
+
+[33mcommit 29787d73db4714d41a09b4f175aa7b6ce4459222[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Mon Apr 28 15:41:32 2025 +0300
+
+    fix bag with media search
+
+[33mcommit 25cebb7e251312fc6acf1d3bdaadcd50c073ae8a[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Thu Apr 17 16:35:38 2025 +0300
+
+    fixing bags
+
+[33mcommit 2cff33bbd6b9fb2550f9cacaf5c043b7a79cd6fc[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Thu Apr 17 15:46:05 2025 +0300
+
+    added all svg to profileNavigation
+
+[33mcommit d415e5ee293893696c5611b0ae04b97c91832766[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Tue Apr 15 17:05:05 2025 +0300
+
+    start create profile
+
+[33mcommit cbb4a67b3f29c5b5cbea48f59d153fa06b4d7f1a[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Tue Apr 15 10:35:02 2025 +0300
+
+    fix bags with build
+
+[33mcommit 95c1621a81d473590582b154f84dcd7fead82a21[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Tue Apr 15 09:28:23 2025 +0300
+
+    fix bags with build
+
+[33mcommit 94da736b992dbc6cc1cfd6da86abe684ea5225f1[m
+Author: pavel <pahanklm01@gmail.com>
+Date:   Mon Apr 14 17:07:43 2025 +0300
+
+    added whitelist email address to subscribe button
+
+[33mcommit 749e1f4011ef13a6e7c687ddf942eb54afe90253[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Thu Dec 26 09:36:13 2024 +0200
+
+    email registration social end
+
+[33mcommit a42accade063e2dd972b17ea02dba81532ff74ad[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Dec 24 11:51:13 2024 +0200
+
+    add validation to subscribe email "client"
+
+[33mcommit 7a6a775f02a9c5ddae8d11cb7be472e2123842eb[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 23 16:16:52 2024 +0200
+
+    add send message for providers registration
+
+[33mcommit 221c3c657c9455e469134e6228afd66fe1195742[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Fri Dec 20 11:35:36 2024 +0200
+
+    finish footer
+
+[33mcommit 44cebe4d603784fb894bec7fbc8a118675a2114c[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Dec 17 14:20:58 2024 +0200
+
+    fix all bags and continue
+
+[33mcommit 4b90142b16baa877a5cd4e989790408dad21607b[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 16 14:45:59 2024 +0200
+
+    console
+
+[33mcommit f0a3269bfa1e91af441ac65df2640100562e0ccc[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 16 12:07:09 2024 +0200
+
+    fix vercel
+
+[33mcommit 2d91b40edcd2103ef7e794483b7bc3fc3aaeff4b[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 16 12:02:23 2024 +0200
+
+    fix vercel
+
+[33mcommit 520e624b9bb0f46efe0f14a27489b399848af773[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 16 11:17:06 2024 +0200
+
+    +
+
+[33mcommit 47fcdbcb6bc533b6397414c4d6aad7d40742c7e8[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 16 10:54:09 2024 +0200
+
+    dev process
+
+[33mcommit c435f6728f7e3c330019e1ffbfbff1591177fb0e[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 16 10:42:49 2024 +0200
+
+    dev process
+
+[33mcommit 4490aeb621dfb90e8f393d5c13427663662655c2[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Dec 16 10:31:44 2024 +0200
+
+    dev process
+
+[33mcommit cb7f8651f2f58d49f254f50b89f99649b00f6e82[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Nov 13 16:01:25 2024 +0200
+
+    fix subscribe
+
+[33mcommit b77c099901ad373fd511d672d9a08556dc3c4318[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Nov 13 16:00:58 2024 +0200
+
+    fix subscribe
+
+[33mcommit 5a4689e2f28df97e18f0f2107c5a6f2d61c7308a[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Nov 13 14:35:18 2024 +0200
+
+    fix bags and add mobile or not
+
+[33mcommit 2dd36aad1e7e7951becb0ae8d62195827dd4776a[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Thu Nov 7 10:57:39 2024 +0200
+
+    add subscribe
+
+[33mcommit 3d719674fb65573c5bbddbefc96b36d3656cf19a[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 17:21:05 2024 +0300
+
+    add footer and subscribe
+
+[33mcommit b367d3c1847843c695aad7d760e333434025c7c6[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 11:00:50 2024 +0300
+
+    fix bag
+
+[33mcommit dfcd2453adf057753109f5ebd91809b3b108b4c3[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 10:57:58 2024 +0300
+
+    fix bag
+
+[33mcommit 80add7416ad56c8bde434ea584509bcea48b6e06[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 10:27:39 2024 +0300
+
+    fix bag
+
+[33mcommit 5925dd30d152e48b9ba0764030f22cebf0e57ac0[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 10:15:29 2024 +0300
+
+    fix bag
+
+[33mcommit 7f434e418e67e604f59ade9649c47ac50f22b05c[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 10:13:45 2024 +0300
+
+    fix bag
+
+[33mcommit 0bb15e0f9480d76f4495f60d7fe63aa4e619994c[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 10:10:03 2024 +0300
+
+    fix bag
+
+[33mcommit 8a28c9406d81bf06f37450fe236fe867651281ad[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 10:02:38 2024 +0300
+
+    fix bag
+
+[33mcommit 5a480a10a72173d34157f127749571205c89eb05[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 23 09:57:16 2024 +0300
+
+    add Advantage and media
+
+[33mcommit d2f1d9eeaad989bd3370b33879a18b565b2aad87[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Oct 21 16:42:13 2024 +0300
+
+    add advantages and need animations
+
+[33mcommit ad65e1f361b6788c3cc2535ab0dd1007cb9705d8[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed Oct 16 11:57:22 2024 +0300
+
+    add top_board
+
+[33mcommit 2a91011f9316d504d3bd1e102df6b44ee0d8c968[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Oct 15 11:39:35 2024 +0300
+
+    fix bags and add top section
+
+[33mcommit aecfa77e1d5e47d2aae731ce0ce61cf4cfe2192e[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Thu May 9 21:55:09 2024 +0300
+
+    add media and create search
+
+[33mcommit d64db8664e264a8cb249bd3f84a75a4a0f38200d[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Thu May 9 21:42:06 2024 +0300
+
+    add media and create search
+
+[33mcommit 4baa91264de6ce113eddf168225061f5f8a59602[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Thu May 9 21:32:37 2024 +0300
+
+    add media and create search
+
+[33mcommit ce7f93d38ce1c1d106b25825e791c40b3e5a3506[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Wed May 8 12:24:03 2024 +0300
+
+    add media for header , burger
+
+[33mcommit 7c6bc6058b6d1402e170a188a19e03d1cbefc9b4[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Apr 30 10:42:15 2024 +0300
+
+    fix bags
+
+[33mcommit fa2a4d1a343447b8465cc98ba09ffbfd825d6dbc[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Apr 30 10:25:46 2024 +0300
+
+    fix bags
+
+[33mcommit 87639217bad4f0c89246ecbcb566020324dac5ca[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Apr 30 10:21:25 2024 +0300
+
+    fix bags
+
+[33mcommit d60cc99392a739c940765f470c0a0ff10b27d220[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Apr 30 10:07:50 2024 +0300
+
+    fix bags
+
+[33mcommit e3a9a4e847fa471d46ec1b203c3a10acb5fde754[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Tue Apr 30 01:04:46 2024 +0300
+
+    fix bags
+
+[33mcommit ec295d843491485918d5ad5940c69872a9651a77[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Apr 29 18:58:55 2024 +0300
+
+    add login-check and refresh token endpoint (fixed)
+
+[33mcommit b297ad33f74c12783de706adf45012b046b72b72[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Mon Apr 29 18:34:59 2024 +0300
+
+    add login-check and refresh token endpoint
+
+[33mcommit 4e4b4a1a79f82960c30704e137bfc8a1aecd9a9a[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Sun Apr 28 09:55:59 2024 +0300
+
+    fix bags
+
+[33mcommit 4d9ff4767d52f48c9f6d4ba81c6eec0f589e1289[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Sun Apr 28 09:48:18 2024 +0300
+
+    try to repair some bags
+
+[33mcommit c5c1fe708a4e915f1012e1c265c14b41e6447e0f[m
+Author: Pavelklm <pahanklm01@gmail.com>
+Date:   Sun Apr 28 09:37:23 2024 +0300
+
+    try to repair some bags
+
+[33mcommit ba1bae3a8d40bbec4d3336113017d3
