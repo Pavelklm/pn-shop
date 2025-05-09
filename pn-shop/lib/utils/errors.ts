@@ -1,6 +1,6 @@
-import { loginCheckFx, refreshTokenFx } from '@/api/auth'
 import { JWTError } from '@/constants/jwt'
 import { AppDispatch } from '@/context/store'
+import { loginCheckFx, refreshTokenFx } from '@/lib/utils/api/auth'
 import { Tokens } from '@/types/ITokens'
 
 /* eslint-disable */
@@ -10,13 +10,11 @@ export const handleJWTError = async (
   repeatRequestAfterRefreshData?: {
     repeatRequestMethodName: string
     payload?: unknown
-  },
+  }
 ) => {
   if (errorName === JWTError.EXPIRED_JWT_TOKEN) {
     const auth = JSON.parse(localStorage.getItem('auth') as string)
-    const newTokens = await dispatch(
-      refreshTokenFx({ jwt: auth.refreshToken })
-    )
+    const newTokens = await dispatch(refreshTokenFx({ jwt: auth.refreshToken }))
 
     if (repeatRequestAfterRefreshData) {
       const { repeatRequestMethodName } = repeatRequestAfterRefreshData

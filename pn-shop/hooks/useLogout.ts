@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation'
 
 import { setIsAuth } from '@/context/auth'
 import { handleLogout } from '@/lib/utils/auth'
-import api from '../lib/utils/apiInstance'
+import api from '../lib/utils/api/apiInstance'
 
 export const useUserLogout = () => {
   const router = useRouter()

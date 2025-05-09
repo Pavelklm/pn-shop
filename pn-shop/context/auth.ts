@@ -1,4 +1,4 @@
-import { singInFx, singUpFx } from '@/api/auth'
+import { singInFx, singUpFx } from '@/lib/utils/api/auth'
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-hot-toast'
 

@@ -1,4 +1,4 @@
-import { loginCheckFx } from '@/api/auth'
+import { loginCheckFx } from '@/lib/utils/api/auth'
 import { createSlice } from '@reduxjs/toolkit'
 import toast from 'react-hot-toast'
 

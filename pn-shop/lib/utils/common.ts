@@ -1,7 +1,7 @@
-import { loginCheckFx } from '@/api/auth'
-import { subscribeFx } from '@/api/subscribe'
 import { setIsAuth } from '@/context/auth'
 import { AppDispatch } from '@/context/store'
+import { loginCheckFx } from '@/lib/utils/api/auth'
+import { subscribeFx } from '@/lib/utils/api/subscribe'
 import toast from 'react-hot-toast'
 
 export const isUserAuth = (dispatch: AppDispatch) => {

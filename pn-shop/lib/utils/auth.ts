@@ -1,7 +1,7 @@
-import { loginCheckFx, singInFx, singUpFx } from '@/api/auth'
 import { AllowedLangs } from '@/constants/lang'
 import { closeAuthPopup, setIsAuth } from '@/context/auth'
 import { AppDispatch } from '@/context/store'
+import { loginCheckFx, singInFx, singUpFx } from '@/lib/utils/api/auth'
 import { signOut } from 'next-auth/react'
 import toast from 'react-hot-toast'
 

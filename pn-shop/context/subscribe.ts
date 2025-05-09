@@ -1,4 +1,4 @@
-import { subscribeFx } from '@/api/subscribe'
+import { subscribeFx } from '@/lib/utils/api/subscribe'
 import { createSlice } from '@reduxjs/toolkit'
 
 const subscribeSlice = createSlice({
