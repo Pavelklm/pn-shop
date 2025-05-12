@@ -13,6 +13,8 @@ export async function POST(req: Request) {
       )
     }
 
+    console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS)
+
     const logoPath = path.resolve('./public/img/output_logo.png')
 
     const transporter = nodemailer.createTransport({

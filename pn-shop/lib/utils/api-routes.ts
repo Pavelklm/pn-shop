@@ -10,6 +10,8 @@ export const getDbAndReqBody = async (
 ) => {
   const db = (await clientPromise).db(process.env.NEXT_PUBLIC_DB_NAME)
 
+  console.log(process.env.NEXT_PUBLIC_DB_NAME)
+
   if (req) {
     const reqBody = await req.json()
     return { db, reqBody }
