@@ -57,7 +57,7 @@ export const Header = () => {
     triggerLoginCheck(dispatch)
     setLoadingUserTrue()
     getSession().then((session: Session | null) => {
-      if (session && session.user && session.user.email && session.user.name) {
+      if (session?.user && session.user.email && session.user.name) {
         handleSignIn(
           session.user.email,
           '',
