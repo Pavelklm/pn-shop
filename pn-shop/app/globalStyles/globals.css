@@ -1,0 +1,152 @@
+:root {
+  --main-color: #00b307;
+  --orange-color: #ff8a00;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Rubik';
+  font-weight: 400;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  margin: 0;
+  margin-top: 8px;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1320px;
+  width: 100%;
+}
+
+.btn-reset {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-family: 'Rubik';
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.link-reset {
+  color: #000;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/Rubik-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Rubik-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/Rubik-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/Rubik-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Rubik-Bold.ttf') format('truetype');
+}
+
+.overflow-hidden {
+  overflow-y: hidden;
+  padding-right: 9.5px;
+}
+
+.overflow-mobile-hidden {
+  overflow-y: hidden;
+}
+
+.overlay {
+  background: #16181b;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: 105;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-active {
+  pointer-events: auto;
+  opacity: 0.6;
+}
+
+.logo {
+  display: flex;
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d3ffda;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: var(--main-color);
+}
+
+p {
+  margin: 0;
+}
+
+.accordion__item-content {
+  overflow: hidden;
+}
